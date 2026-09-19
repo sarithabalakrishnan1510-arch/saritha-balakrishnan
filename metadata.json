@@ -1,0 +1,7 @@
+{
+  "name": "Cast Kerala",
+  "description": "Talent, casting, crew, locations, and production management network for the Malayalam film and entertainment industry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
