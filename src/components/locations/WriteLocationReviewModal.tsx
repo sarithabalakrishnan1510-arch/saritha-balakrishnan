@@ -221,7 +221,7 @@ export const WriteLocationReviewModal: React.FC<WriteLocationReviewModalProps> =
         {/* Modal Body Form */}
         <form onSubmit={handleSubmit} className="p-6 overflow-y-auto space-y-6 flex-1 text-xs sm:text-sm">
           {errorMsg && (
-            <div className="p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs flex items-center gap-2">
+            <div className="p-3 rounded-xl bg-red-500/20 border border-red-500/40 text-red-300 text-xs flex items-center gap-2">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -381,7 +381,7 @@ export const WriteLocationReviewModal: React.FC<WriteLocationReviewModalProps> =
               {/* Panchayat & Caretaker Support */}
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between sm:col-span-2">
                 <div className="flex items-center gap-2">
-                  <Users2 className="w-4 h-4 text-rose-400" />
+                  <Users2 className="w-4 h-4 text-amber-400" />
                   <div>
                     <span className="text-xs font-medium text-white block">Panchayat & Caretaker Liaison</span>
                     <span className="text-[10px] text-zinc-400">Single window clearance ease & on-time gate access</span>
@@ -567,7 +567,7 @@ export const WriteLocationReviewModal: React.FC<WriteLocationReviewModalProps> =
             </div>
 
             <div className="space-y-2 pt-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-rose-400 block">
+              <label className="text-xs font-bold uppercase tracking-wider text-amber-400 block">
                 Cautions & Logistics Notices (Cons)
               </label>
               <div className="flex flex-wrap gap-1.5">
@@ -580,7 +580,7 @@ export const WriteLocationReviewModal: React.FC<WriteLocationReviewModalProps> =
                       onClick={() => toggleCon(con)}
                       className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
                         isSelected
-                          ? 'bg-rose-600 text-white border border-rose-400 shadow-sm'
+                          ? 'bg-amber-500/20 text-amber-300 border border-amber-400/60 shadow-sm'
                           : 'bg-white/5 text-zinc-300 hover:bg-white/10 border border-white/10'
                       }`}
                     >
@@ -597,7 +597,7 @@ export const WriteLocationReviewModal: React.FC<WriteLocationReviewModalProps> =
                   value={customCon}
                   onChange={(e) => setCustomCon(e.target.value)}
                   placeholder="Add custom caution / con..."
-                  className="flex-1 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder-zinc-500 text-xs focus:outline-none focus:border-rose-500"
+                  className="flex-1 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder-zinc-500 text-xs focus:outline-none focus:border-amber-400"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       e.preventDefault();
@@ -608,7 +608,7 @@ export const WriteLocationReviewModal: React.FC<WriteLocationReviewModalProps> =
                 <button
                   type="button"
                   onClick={handleAddCustomCon}
-                  className="px-3 py-1.5 rounded-lg bg-rose-600/80 hover:bg-rose-600 text-white text-xs font-semibold"
+                  className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-bold transition-colors"
                 >
                   Add
                 </button>

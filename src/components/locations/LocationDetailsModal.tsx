@@ -96,7 +96,7 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
         {/* Sticky Header */}
         <div className="sticky top-0 z-30 flex items-center justify-between px-5 py-4 bg-[#12141d]/95 backdrop-blur-md border-b border-white/10">
           <div className="flex items-center gap-3 min-w-0 pr-2">
-            <span className="px-2.5 py-1 rounded-lg text-[11px] font-bold tracking-wide uppercase bg-rose-500/20 text-rose-300 border border-rose-500/30 shrink-0">
+            <span className="px-2.5 py-1 rounded-lg text-[11px] font-bold tracking-wide uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30 shrink-0">
               {location.category_name}
             </span>
             <LocationRatingBadge 
@@ -145,12 +145,12 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
               onClick={() => toggleFavoriteLocation(location.id, location.title)}
               className={`p-2 rounded-xl border transition-all flex items-center gap-1.5 text-xs ${
                 isFavorited
-                  ? 'bg-rose-600 text-white border-rose-500 shadow-md shadow-rose-950/40'
+                  ? 'bg-amber-400 text-zinc-950 border-amber-300 shadow-md shadow-amber-950/40 font-semibold'
                   : 'bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border-white/10'
               }`}
               title={isFavorited ? 'Remove from favorites' : 'Save to favorites'}
             >
-              <Heart className={`w-4 h-4 ${isFavorited ? 'fill-white text-white' : 'text-rose-400'}`} />
+              <Heart className={`w-4 h-4 ${isFavorited ? 'fill-zinc-950 text-zinc-950' : 'text-amber-400'}`} />
               <span className="hidden sm:inline text-xs font-semibold">
                 {isFavorited ? 'Saved' : 'Save'}
               </span>
@@ -161,7 +161,7 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
               id="close-location-details-btn"
               type="button"
               onClick={onClose}
-              className="p-2 rounded-xl bg-white/10 hover:bg-rose-600 text-zinc-300 hover:text-white transition-colors"
+              className="p-2 rounded-xl bg-white/10 hover:bg-amber-500 hover:text-zinc-950 text-zinc-300 transition-colors"
               aria-label="Close location details"
             >
               <X className="w-5 h-5" />
@@ -175,7 +175,7 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
           <section aria-label="High-Resolution Photo Gallery">
             <div className="mb-2 flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs text-zinc-400">
-                <Sparkles className="w-3.5 h-3.5 text-rose-400" />
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                 <span className="font-semibold text-zinc-200">Cinematic Photo Gallery</span>
                 <span>•</span>
                 <span>Swipe left/right or use thumbnail strip</span>
@@ -210,7 +210,7 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
               </div>
 
               <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-400 flex-wrap">
-                <div className="flex items-center gap-1 text-rose-400">
+                <div className="flex items-center gap-1 text-amber-400">
                   <MapPin className="w-4 h-4" />
                   <span className="font-semibold text-zinc-200">{location.city}, {location.district} District</span>
                 </div>
@@ -233,7 +233,7 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
             {/* Price Card */}
             <div className="sm:text-right shrink-0 bg-black/40 border border-white/10 p-3.5 rounded-2xl">
               <span className="text-[11px] uppercase tracking-wider text-zinc-400 block font-medium">Standard Daily Rate</span>
-              <span className="text-lg sm:text-xl font-extrabold text-white text-rose-300">
+              <span className="text-lg sm:text-xl font-extrabold text-amber-300">
                 {location.pricing_text}
               </span>
               <span className="text-[10px] text-zinc-500 block mt-0.5">12-Hour Film Shift</span>
@@ -287,7 +287,7 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
           {/* Description & Scene Archetypes */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              <Building className="w-4 h-4 text-rose-400" />
+              <Building className="w-4 h-4 text-amber-400" />
               Property Architecture & Scene Context
             </h3>
             <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed bg-black/20 p-4 rounded-2xl border border-white/5">
@@ -361,11 +361,11 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
           </div>
 
           {/* Caretaker Direct Contact Box */}
-          <div className="p-4 rounded-2xl bg-gradient-to-r from-rose-950/40 via-black/50 to-zinc-900/60 border border-rose-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-950/40 via-black/50 to-zinc-900/60 border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="space-y-1 text-center sm:text-left">
               <div className="flex items-center justify-center sm:justify-start gap-2">
-                <Phone className="w-4 h-4 text-rose-400" />
-                <span className="text-xs uppercase tracking-wider font-semibold text-rose-300">
+                <Phone className="w-4 h-4 text-amber-400" />
+                <span className="text-xs uppercase tracking-wider font-semibold text-amber-300">
                   Property Manager / Caretaker Desk
                 </span>
               </div>
@@ -397,7 +397,7 @@ export const LocationDetailsModal: React.FC<LocationDetailsModalProps> = ({
                   onClose();
                   onBookLocation(location);
                 }}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-rose-950/60 active:scale-95"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-amber-950/60 active:scale-95"
               >
                 Book Shooting Shift
               </button>

@@ -71,8 +71,8 @@ export const CATEGORY_DEFINITIONS: {
     label: 'Modern',
     subtitle: 'Glass villas, industrial & luxury',
     icon: Sparkles,
-    color: 'text-rose-400',
-    badgeBg: 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
+    color: 'text-amber-300',
+    badgeBg: 'bg-amber-400/20 text-amber-200 border border-amber-400/30'
   },
   {
     id: 'indoor',
@@ -207,7 +207,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
       {/* Sidebar Header */}
       <div className="flex items-center justify-between pb-4 border-b border-white/10">
         <div className="flex items-center gap-2">
-          <SlidersHorizontal className="w-4 h-4 text-rose-400" />
+          <SlidersHorizontal className="w-4 h-4 text-amber-400" />
           <h3 className="font-bold text-sm tracking-wide uppercase text-white font-cinematic">
             Location Filters
           </h3>
@@ -216,7 +216,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
         {hasActiveFilters && (
           <button
             onClick={onResetFilters}
-            className="text-[11px] font-semibold text-rose-400 hover:text-rose-300 flex items-center gap-1 transition-colors px-2 py-0.5 rounded bg-rose-500/10 hover:bg-rose-500/20"
+            className="text-[11px] font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1 transition-colors px-2 py-0.5 rounded bg-amber-500/10 hover:bg-amber-500/20"
             title="Reset all filters"
           >
             <RotateCcw className="w-3 h-3" />
@@ -256,7 +256,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
                 onClick={() => handleCategorySelect(cat.id)}
                 className={`w-full text-left p-2.5 rounded-xl border transition-all flex items-center justify-between group ${
                   isSelected
-                    ? 'bg-rose-600/15 border-rose-500/60 shadow-sm ring-1 ring-rose-500/40'
+                    ? 'bg-amber-500/15 border-amber-400/60 shadow-sm ring-1 ring-amber-400/40 text-amber-200'
                     : 'bg-black/30 hover:bg-white/5 border-white/5 hover:border-white/15 text-zinc-300'
                 }`}
               >
@@ -264,14 +264,14 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
                   <div
                     className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-transform ${
                       isSelected
-                        ? 'bg-rose-600 text-white scale-105'
+                        ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold scale-105 shadow-md shadow-amber-950/40'
                         : 'bg-white/5 text-zinc-400 group-hover:text-white group-hover:scale-105'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
-                    <div className={`text-xs font-bold leading-tight truncate ${isSelected ? 'text-white' : 'text-zinc-200 group-hover:text-white'}`}>
+                    <div className={`text-xs font-bold leading-tight truncate ${isSelected ? 'text-amber-200 font-semibold' : 'text-zinc-200 group-hover:text-white'}`}>
                       {cat.label}
                     </div>
                     <div className="text-[10px] text-zinc-400 truncate">
@@ -283,7 +283,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
                 <span
                   className={`text-[10px] px-2 py-0.5 rounded-full font-bold shrink-0 ml-2 transition-colors ${
                     isSelected
-                      ? 'bg-rose-500 text-white'
+                      ? 'bg-amber-400 text-zinc-950'
                       : 'bg-white/5 text-zinc-400 group-hover:bg-white/10 group-hover:text-zinc-200'
                   }`}
                 >
@@ -299,13 +299,13 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
       <div className="space-y-2 pt-2 border-t border-white/10">
         <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center justify-between">
           <span className="flex items-center gap-1.5">
-            <MapPin className="w-3.5 h-3.5 text-rose-400" />
+            <MapPin className="w-3.5 h-3.5 text-amber-400" />
             <span>Kerala District</span>
           </span>
           {filters.district !== 'all' && (
             <button
               onClick={() => onFilterChange({ ...filters, district: 'all' })}
-              className="text-[10px] text-rose-400 hover:underline capitalize"
+              className="text-[10px] text-amber-400 hover:underline capitalize"
             >
               Clear
             </button>
@@ -315,7 +315,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
         <select
           value={filters.district}
           onChange={e => onFilterChange({ ...filters, district: e.target.value })}
-          className="w-full bg-black/50 border border-white/10 hover:border-white/20 focus:border-rose-500 rounded-xl px-3 py-2 text-xs text-white focus:outline-none transition-colors"
+          className="w-full bg-black/50 border border-white/10 hover:border-white/20 focus:border-amber-400 rounded-xl px-3 py-2 text-xs text-white focus:outline-none transition-colors"
         >
           <option value="all">All 14 Kerala Districts</option>
           {KERALA_DISTRICTS.map(d => (
@@ -336,7 +336,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
                 onClick={() => onFilterChange({ ...filters, district: isSelected ? 'all' : d })}
                 className={`text-[10px] px-2.5 py-1 rounded-lg border transition-all ${
                   isSelected
-                    ? 'bg-rose-600 text-white border-rose-500 font-semibold'
+                    ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold border-amber-300 shadow-sm'
                     : 'bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border-white/5'
                 }`}
               >
@@ -355,7 +355,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
         <select
           value={filters.venueType}
           onChange={e => onFilterChange({ ...filters, venueType: e.target.value })}
-          className="w-full bg-black/50 border border-white/10 hover:border-white/20 focus:border-rose-500 rounded-xl px-3 py-2 text-xs text-white focus:outline-none transition-colors"
+          className="w-full bg-black/50 border border-white/10 hover:border-white/20 focus:border-amber-400 rounded-xl px-3 py-2 text-xs text-white focus:outline-none transition-colors"
         >
           {VENUE_TYPES.map(vt => (
             <option key={vt} value={vt}>
@@ -382,7 +382,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
               type="checkbox"
               checked={filters.nightShootOnly}
               onChange={e => onFilterChange({ ...filters, nightShootOnly: e.target.checked })}
-              className="w-4 h-4 rounded border-white/20 bg-zinc-800 text-rose-600 focus:ring-rose-500"
+              className="w-4 h-4 rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
             />
           </label>
 
@@ -396,7 +396,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
               type="checkbox"
               checked={filters.generatorOnly}
               onChange={e => onFilterChange({ ...filters, generatorOnly: e.target.checked })}
-              className="w-4 h-4 rounded border-white/20 bg-zinc-800 text-rose-600 focus:ring-rose-500"
+              className="w-4 h-4 rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
             />
           </label>
 
@@ -410,21 +410,21 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
               type="checkbox"
               checked={filters.largeCrewOnly}
               onChange={e => onFilterChange({ ...filters, largeCrewOnly: e.target.checked })}
-              className="w-4 h-4 rounded border-white/20 bg-zinc-800 text-rose-600 focus:ring-rose-500"
+              className="w-4 h-4 rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
             />
           </label>
 
           {/* Parking 25+ */}
           <label className="flex items-center justify-between p-2 rounded-xl bg-black/30 hover:bg-white/5 border border-white/5 cursor-pointer text-xs text-zinc-300 transition-colors">
             <span className="flex items-center gap-2">
-              <Car className="w-3.5 h-3.5 text-rose-400" />
+              <Car className="w-3.5 h-3.5 text-amber-400" />
               <span>Heavy Unit Parking (25+)</span>
             </span>
             <input
               type="checkbox"
               checked={filters.largeParkingOnly}
               onChange={e => onFilterChange({ ...filters, largeParkingOnly: e.target.checked })}
-              className="w-4 h-4 rounded border-white/20 bg-zinc-800 text-rose-600 focus:ring-rose-500"
+              className="w-4 h-4 rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
             />
           </label>
         </div>
@@ -452,7 +452,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
               onClick={() => onFilterChange({ ...filters, budgetTier: tier.id })}
               className={`py-1.5 px-2 rounded-lg border text-center transition-all text-xs ${
                 filters.budgetTier === tier.id
-                  ? 'bg-rose-600 text-white border-rose-500 font-semibold'
+                  ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold border-amber-300 shadow-sm'
                   : 'bg-black/30 hover:bg-white/5 text-zinc-400 hover:text-white border-white/5'
               }`}
             >
@@ -463,7 +463,7 @@ export const LocationFilterSidebar: React.FC<LocationFilterSidebarProps> = ({
       </div>
 
       {/* Footer Info Box for Productions */}
-      <div className="p-3 rounded-xl bg-gradient-to-br from-amber-500/10 to-rose-500/10 border border-amber-500/20 text-[11px] text-zinc-300 space-y-1">
+      <div className="p-3 rounded-xl bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border border-amber-500/20 text-[11px] text-zinc-300 space-y-1">
         <div className="font-semibold text-amber-300 flex items-center gap-1">
           <span>Kerala Cine Scouting Note</span>
         </div>

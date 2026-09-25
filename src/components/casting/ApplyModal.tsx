@@ -77,8 +77,8 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="w-full max-w-lg rounded-2xl bg-[#14161d] border border-white/15 p-6 shadow-2xl relative text-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="w-full max-w-lg rounded-2xl bg-[#0d0e14] border border-amber-500/30 p-6 shadow-2xl relative text-white">
         <button
           onClick={handleModalClose}
           className="absolute top-4 right-4 text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-white/10"
@@ -88,15 +88,15 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
 
         {submitted ? (
           <div className="text-center py-8 space-y-4">
-            <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/10">
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-bold font-cinematic text-white">Application Submitted!</h3>
             <p className="text-xs text-zinc-300 max-w-sm mx-auto leading-relaxed">
               Your profile, media, and cover note have been securely transmitted to the production team for <strong>{role.role_name}</strong>.
             </p>
-            <div className="p-3 rounded-lg bg-black/40 border border-white/10 text-xs text-zinc-400 text-left">
-              <div className="flex items-center gap-2 text-zinc-300 font-semibold mb-1">
+            <div className="p-3 rounded-lg bg-black/60 border border-amber-500/20 text-xs text-zinc-400 text-left">
+              <div className="flex items-center gap-2 text-amber-300 font-semibold mb-1">
                 <span>Next Steps:</span>
               </div>
               <ul className="list-disc list-inside space-y-1 text-[11px]">
@@ -107,7 +107,7 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
             </div>
             <button
               onClick={handleModalClose}
-              className="w-full py-2.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs shadow-md transition-all"
+              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs shadow-lg shadow-amber-500/20 transition-all active:scale-95"
             >
               Done
             </button>
@@ -115,7 +115,7 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
         ) : (
           <div>
             <div className="mb-4">
-              <span className="text-[11px] font-semibold text-rose-400 uppercase tracking-wider">
+              <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider">
                 Direct Application
               </span>
               <h2 className="text-xl font-bold text-white mt-0.5">{role.role_name}</h2>
@@ -126,12 +126,12 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
 
             {/* Smart Match pill if available */}
             {matchResult && (
-              <div className="mb-4 p-3 rounded-lg bg-black/40 border border-white/10 flex items-center justify-between text-xs">
+              <div className="mb-4 p-3 rounded-lg bg-black/50 border border-amber-500/20 flex items-center justify-between text-xs">
                 <div>
                   <span className="text-zinc-400">Match Compatibility:</span>
                   <div className="flex items-center gap-1.5 mt-0.5">
                     <Sparkles className="w-4 h-4 text-amber-400" />
-                    <span className="font-bold text-white">{matchResult.totalScore}% {matchResult.matchLevel.toUpperCase()}</span>
+                    <span className="font-bold text-amber-300">{matchResult.totalScore}% {matchResult.matchLevel.toUpperCase()}</span>
                   </div>
                 </div>
                 <div className="text-[11px] text-zinc-400 text-right">
@@ -150,7 +150,7 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
                 </div>
                 <p>
                   You already submitted an application on {new Date(existingApp.submitted_at).toLocaleDateString()}.
-                  Current status: <strong className="uppercase">{existingApp.status}</strong>.
+                  Current status: <strong className="uppercase text-amber-300">{existingApp.status}</strong>.
                 </p>
               </div>
             ) : (
@@ -172,7 +172,7 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
                     value={message}
                     onChange={e => setMessage(e.target.value)}
                     placeholder="Briefly state your relevant screen/theatre experience, fluency in required dialect, and enthusiasm for this role..."
-                    className="w-full rounded-lg bg-black/50 border border-white/15 px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                    className="w-full rounded-xl bg-black/60 border border-amber-500/25 px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400/70 transition-colors"
                   />
                 </div>
 
@@ -182,19 +182,19 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
                     <span className="text-[10px] text-zinc-500">Unlisted YouTube / Vimeo / Drive</span>
                   </label>
                   <div className="relative">
-                    <Video className="w-4 h-4 absolute left-3 top-2.5 text-zinc-500" />
+                    <Video className="w-4 h-4 absolute left-3 top-2.5 text-amber-400/70" />
                     <input
                       type="url"
                       value={selfTapeUrl}
                       onChange={e => setSelfTapeUrl(e.target.value)}
                       placeholder="https://youtube.com/watch?v=... or Google Drive link"
-                      className="w-full rounded-lg bg-black/50 border border-white/15 pl-9 pr-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-rose-500"
+                      className="w-full rounded-xl bg-black/60 border border-amber-500/25 pl-9 pr-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400/70"
                     />
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-black/30 border border-white/10 text-[11px] text-zinc-400 space-y-1">
-                  <p className="font-semibold text-zinc-300">Privacy Safeguards:</p>
+                <div className="p-3 rounded-lg bg-black/40 border border-amber-500/15 text-[11px] text-zinc-400 space-y-1">
+                  <p className="font-semibold text-amber-300/90">Privacy Safeguards:</p>
                   <p>Your private phone number and home address remain concealed. Initial casting callbacks will be routed through Cast Kerala messages or registered guardian contacts.</p>
                 </div>
 
@@ -202,13 +202,13 @@ export const ApplyModal: React.FC<ApplyModalProps> = ({ role, castingCall, isOpe
                   <button
                     type="button"
                     onClick={handleModalClose}
-                    className="px-4 py-2 rounded-lg text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/5"
+                    className="px-4 py-2 rounded-xl text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs shadow-md transition-all flex items-center gap-1.5"
+                    className="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs shadow-lg shadow-amber-500/20 transition-all flex items-center gap-1.5 active:scale-95"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Submit Application</span>

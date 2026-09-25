@@ -45,7 +45,7 @@ export const CastingDetailPage: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-4">
         <h2 className="text-2xl font-bold text-white">Casting Call Not Found</h2>
         <p className="text-zinc-400 text-xs">The casting notice may have expired or been archived.</p>
-        <Link to="/casting" className="inline-block px-4 py-2 rounded-lg bg-rose-600 text-white text-xs font-semibold">
+        <Link to="/casting" className="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 text-xs font-bold shadow-md shadow-amber-950/40">
           Return to Casting Calls
         </Link>
       </div>
@@ -78,7 +78,7 @@ export const CastingDetailPage: React.FC = () => {
       <div className="rounded-2xl bg-[#12141c] border border-white/10 p-6 sm:p-8 space-y-6 shadow-xl">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-300 border border-rose-500/20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20">
               <Building2 className="w-3.5 h-3.5" />
               {call.company_name || 'Production House'}
             </span>
@@ -100,12 +100,12 @@ export const CastingDetailPage: React.FC = () => {
               onClick={() => toggleFavoriteCasting(call.id, call.title)}
               className={`p-2 rounded-lg text-xs flex items-center gap-1.5 transition-colors border ${
                 isFavoriteCasting(call.id)
-                  ? 'bg-rose-500/20 border-rose-500/40 text-rose-300'
+                  ? 'bg-amber-400 text-zinc-950 border-amber-300 shadow-md shadow-amber-950/40 font-semibold'
                   : 'bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border-white/10'
               }`}
               title={isFavoriteCasting(call.id) ? 'Remove from saved list' : 'Save to personal list'}
             >
-              <Heart className={`w-4 h-4 ${isFavoriteCasting(call.id) ? 'fill-rose-500 text-rose-500' : 'text-zinc-400'}`} />
+              <Heart className={`w-4 h-4 ${isFavoriteCasting(call.id) ? 'fill-zinc-950 text-zinc-950' : 'text-zinc-400'}`} />
               <span>{isFavoriteCasting(call.id) ? 'Saved' : 'Save'}</span>
             </button>
             <ShareButton
@@ -119,10 +119,10 @@ export const CastingDetailPage: React.FC = () => {
             />
             <button
               onClick={() => setIsReportOpen(true)}
-              className="p-2 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 text-xs flex items-center gap-1.5 transition-colors border border-rose-500/20"
+              className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white text-xs flex items-center gap-1.5 transition-colors border border-white/10"
               title="Report suspicious demands or fees"
             >
-              <ShieldAlert className="w-4 h-4 text-rose-400" />
+              <ShieldAlert className="w-4 h-4 text-amber-400" />
               <span>Report</span>
             </button>
           </div>
@@ -133,7 +133,7 @@ export const CastingDetailPage: React.FC = () => {
             {call.title}
           </h1>
           {project && (
-            <p className="text-xs text-rose-400 font-semibold mt-1">
+            <p className="text-xs text-amber-400 font-semibold mt-1">
               Project: {project.name} ({project.project_type.toUpperCase()}) • Directed by {project.director_name}
             </p>
           )}
@@ -175,7 +175,7 @@ export const CastingDetailPage: React.FC = () => {
       </div>
 
       {/* Safety Notice Strip */}
-      <div className="p-4 rounded-xl bg-rose-950/25 border border-rose-500/25 flex items-start gap-3 text-xs text-rose-200">
+      <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-500/25 flex items-start gap-3 text-xs text-amber-200">
         <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
         <div className="space-y-1">
           <strong className="text-white block">Safe Casting Guarantee:</strong>
@@ -203,7 +203,7 @@ export const CastingDetailPage: React.FC = () => {
             return (
               <div
                 key={role.id}
-                className="rounded-xl bg-[#14161f] border border-white/10 p-5 hover:border-rose-500/40 transition-all space-y-4 shadow-lg"
+                className="rounded-xl bg-[#14161f] border border-white/10 p-5 hover:border-amber-400/40 transition-all space-y-4 shadow-lg"
               >
                 {/* Role Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -213,7 +213,7 @@ export const CastingDetailPage: React.FC = () => {
                       <span className="text-xs px-2 py-0.5 rounded bg-white/10 text-zinc-300">
                         Playing Age: {role.playing_age_min}–{role.playing_age_max}
                       </span>
-                      <span className="text-xs px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 capitalize font-medium">
+                      <span className="text-xs px-2 py-0.5 rounded bg-amber-500/15 text-amber-200 border border-amber-500/20 capitalize font-medium">
                         {role.gender_requirement}
                       </span>
                       <span className="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-medium">
@@ -240,7 +240,7 @@ export const CastingDetailPage: React.FC = () => {
                           setBreakdownRole(role);
                           setIsBreakdownOpen(true);
                         }}
-                        className="text-xs text-rose-400 hover:text-rose-300 underline"
+                        className="text-xs text-amber-400 hover:text-amber-300 underline"
                       >
                         Breakdown
                       </button>
@@ -287,7 +287,7 @@ export const CastingDetailPage: React.FC = () => {
                       setSelectedRoleForApply(role);
                       setIsApplyOpen(true);
                     }}
-                    className="px-6 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs shadow-md transition-all flex items-center gap-2"
+                    className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs shadow-md shadow-amber-950/40 transition-all flex items-center gap-2 active:scale-95"
                   >
                     <span>Apply for this Role</span>
                   </button>

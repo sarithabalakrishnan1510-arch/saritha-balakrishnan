@@ -149,13 +149,13 @@ export const FavoritesPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 animate-in fade-in duration-200">
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-500/20 pb-6">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="p-1.5 rounded-lg bg-rose-500/10 text-rose-400">
-              <Heart className="w-4 h-4 fill-rose-500 text-rose-500" />
+            <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              <Heart className="w-4 h-4 fill-amber-400 text-amber-400" />
             </span>
-            <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider">
               Personal Shortlist & Vault
             </span>
           </div>
@@ -173,16 +173,16 @@ export const FavoritesPage: React.FC = () => {
             <>
               <button
                 onClick={handleShareFavorites}
-                className="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 hover:text-white text-xs font-semibold flex items-center gap-2 transition-colors shadow-sm"
+                className="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-amber-500/20 text-zinc-300 hover:text-white text-xs font-semibold flex items-center gap-2 transition-colors shadow-sm"
                 title="Copy formatted list to clipboard"
               >
-                <Share2 className="w-3.5 h-3.5 text-zinc-400" />
+                <Share2 className="w-3.5 h-3.5 text-amber-400" />
                 <span>{copiedSummary ? 'List Copied!' : 'Export List'}</span>
               </button>
 
               <button
                 onClick={() => setConfirmClearOpen(true)}
-                className="px-3.5 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-400 text-xs font-semibold flex items-center gap-2 transition-colors"
+                className="px-3.5 py-2 rounded-xl bg-red-950/30 hover:bg-red-900/40 border border-red-500/30 text-red-400 text-xs font-semibold flex items-center gap-2 transition-colors"
                 title="Remove all saved favorites"
               >
                 <Trash2 className="w-3.5 h-3.5" />
@@ -199,13 +199,13 @@ export const FavoritesPage: React.FC = () => {
           onClick={() => setActiveTab('all')}
           className={`p-4 rounded-xl border text-left transition-all ${
             activeTab === 'all'
-              ? 'bg-[#151722] border-rose-500/50 shadow-lg shadow-rose-950/20'
-              : 'bg-[#111218] border-white/10 hover:border-white/20'
+              ? 'bg-[#151722] border-amber-500/50 shadow-lg shadow-amber-950/20'
+              : 'bg-[#0d0e14] border-white/10 hover:border-amber-500/30'
           }`}
         >
           <div className="flex items-center justify-between">
             <span className="text-xs text-zinc-400 font-medium">Total Bookmarks</span>
-            <Layers className="w-4 h-4 text-zinc-500" />
+            <Layers className="w-4 h-4 text-amber-400" />
           </div>
           <div className="mt-2 flex items-baseline gap-2">
             <span className="text-2xl font-bold text-white font-cinematic">{totalCount}</span>
@@ -217,16 +217,16 @@ export const FavoritesPage: React.FC = () => {
           onClick={() => setActiveTab('casting')}
           className={`p-4 rounded-xl border text-left transition-all ${
             activeTab === 'casting'
-              ? 'bg-[#151722] border-rose-500/50 shadow-lg shadow-rose-950/20'
-              : 'bg-[#111218] border-white/10 hover:border-white/20'
+              ? 'bg-[#151722] border-amber-500/50 shadow-lg shadow-amber-950/20'
+              : 'bg-[#0d0e14] border-white/10 hover:border-amber-500/30'
           }`}
         >
           <div className="flex items-center justify-between">
             <span className="text-xs text-zinc-400 font-medium">Saved Casting Calls</span>
-            <Film className="w-4 h-4 text-rose-400" />
+            <Film className="w-4 h-4 text-amber-400" />
           </div>
           <div className="mt-2 flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-rose-400 font-cinematic">{castingCount}</span>
+            <span className="text-2xl font-bold text-amber-400 font-cinematic">{castingCount}</span>
             <span className="text-[11px] text-zinc-500">audition notices</span>
           </div>
         </button>
@@ -235,16 +235,16 @@ export const FavoritesPage: React.FC = () => {
           onClick={() => setActiveTab('locations')}
           className={`p-4 rounded-xl border text-left transition-all ${
             activeTab === 'locations'
-              ? 'bg-[#151722] border-rose-500/50 shadow-lg shadow-rose-950/20'
-              : 'bg-[#111218] border-white/10 hover:border-white/20'
+              ? 'bg-[#151722] border-amber-500/50 shadow-lg shadow-amber-950/20'
+              : 'bg-[#0d0e14] border-white/10 hover:border-amber-500/30'
           }`}
         >
           <div className="flex items-center justify-between">
             <span className="text-xs text-zinc-400 font-medium">Saved Shooting Locations</span>
-            <Camera className="w-4 h-4 text-amber-400" />
+            <Camera className="w-4 h-4 text-yellow-400" />
           </div>
           <div className="mt-2 flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-amber-400 font-cinematic">{locationCount}</span>
+            <span className="text-2xl font-bold text-yellow-400 font-cinematic">{locationCount}</span>
             <span className="text-[11px] text-zinc-500">scouted venues</span>
           </div>
         </button>
@@ -253,12 +253,12 @@ export const FavoritesPage: React.FC = () => {
       {/* Tabs & Search Bar */}
       <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
         {/* Segmented Tab Controls */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-[#12131b] border border-white/10 self-start">
+        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-[#0d0e14] border border-amber-500/20 self-start">
           <button
             onClick={() => setActiveTab('all')}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeTab === 'all'
-                ? 'bg-rose-600 text-white shadow'
+                ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow'
                 : 'text-zinc-400 hover:text-white'
             }`}
           >
@@ -268,7 +268,7 @@ export const FavoritesPage: React.FC = () => {
             onClick={() => setActiveTab('casting')}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
               activeTab === 'casting'
-                ? 'bg-rose-600 text-white shadow'
+                ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow'
                 : 'text-zinc-400 hover:text-white'
             }`}
           >
@@ -279,7 +279,7 @@ export const FavoritesPage: React.FC = () => {
             onClick={() => setActiveTab('locations')}
             className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
               activeTab === 'locations'
-                ? 'bg-rose-600 text-white shadow'
+                ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow'
                 : 'text-zinc-400 hover:text-white'
             }`}
           >
@@ -296,7 +296,7 @@ export const FavoritesPage: React.FC = () => {
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder="Search saved titles, locations, notes..."
-            className="w-full bg-[#111218] border border-white/10 hover:border-white/20 focus:border-rose-500 rounded-xl pl-9 pr-8 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-all shadow-inner"
+            className="w-full bg-[#0d0e14] border border-amber-500/20 hover:border-amber-500/40 focus:border-amber-400 rounded-xl pl-9 pr-8 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-all shadow-inner"
           />
           {searchQuery && (
             <button
@@ -311,9 +311,9 @@ export const FavoritesPage: React.FC = () => {
 
       {/* Empty State when NO favorites saved */}
       {totalCount === 0 ? (
-        <div className="p-12 text-center rounded-2xl bg-[#12141c] border border-white/10 space-y-5">
-          <div className="w-16 h-16 rounded-2xl bg-rose-500/10 text-rose-400 flex items-center justify-center mx-auto border border-rose-500/20">
-            <Heart className="w-8 h-8 text-rose-500" />
+        <div className="p-12 text-center rounded-2xl bg-[#0d0e14] border border-amber-500/20 space-y-5">
+          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mx-auto border border-amber-500/30">
+            <Heart className="w-8 h-8 text-amber-400 fill-amber-400" />
           </div>
           <div className="space-y-1 max-w-md mx-auto">
             <h3 className="text-lg font-bold text-white font-cinematic">
@@ -326,14 +326,14 @@ export const FavoritesPage: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <Link
               to="/casting"
-              className="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-md hover:scale-[1.02]"
+              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 text-xs font-bold flex items-center gap-1.5 transition-all shadow-md hover:scale-[1.02]"
             >
               <Film className="w-4 h-4" />
               <span>Browse Casting Calls</span>
             </Link>
             <Link
               to="/locations"
-              className="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-zinc-200 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all"
+              className="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-amber-500/20 text-zinc-200 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all"
             >
               <Camera className="w-4 h-4 text-amber-400" />
               <span>Scout Shooting Locations</span>
@@ -345,16 +345,16 @@ export const FavoritesPage: React.FC = () => {
           {/* SECTION 1: CASTING CALLS */}
           {(activeTab === 'all' || activeTab === 'casting') && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-white/5 pb-2">
+              <div className="flex items-center justify-between border-b border-amber-500/20 pb-2">
                 <div className="flex items-center gap-2">
-                  <Film className="w-4 h-4 text-rose-400" />
+                  <Film className="w-4 h-4 text-amber-400" />
                   <h2 className="text-base font-bold text-white font-cinematic">
                     Saved Casting Calls ({filteredCalls.length})
                   </h2>
                 </div>
                 <Link
                   to="/casting"
-                  className="text-[11px] font-semibold text-rose-400 hover:text-rose-300 flex items-center gap-1"
+                  className="text-[11px] font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1"
                 >
                   <span>Explore more casting</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -362,7 +362,7 @@ export const FavoritesPage: React.FC = () => {
               </div>
 
               {filteredCalls.length === 0 ? (
-                <div className="p-8 text-center rounded-xl bg-[#12141c] border border-white/5 text-zinc-400 text-xs">
+                <div className="p-8 text-center rounded-xl bg-[#0d0e14] border border-amber-500/10 text-zinc-400 text-xs">
                   {castingCount === 0
                     ? 'No casting calls saved yet. Tap the heart icon on any audition notice.'
                     : 'No saved casting calls match your search query.'}
@@ -376,13 +376,13 @@ export const FavoritesPage: React.FC = () => {
                     return (
                       <div
                         key={call.id}
-                        className="rounded-2xl bg-[#13151f] border border-white/10 hover:border-rose-500/30 transition-all overflow-hidden flex flex-col justify-between shadow-xl"
+                        className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 hover:border-amber-500/40 transition-all overflow-hidden flex flex-col justify-between shadow-xl"
                       >
                         <div className="p-5 space-y-4">
                           {/* Header bar with remove and full details */}
                           <div className="flex items-start justify-between gap-3">
                             <div className="flex items-center gap-2 flex-wrap">
-                              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-rose-500/10 text-rose-300 border border-rose-500/20">
+                              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20">
                                 <Building2 className="w-3 h-3" />
                                 {call.company_name || 'Production House'}
                               </span>
@@ -394,10 +394,10 @@ export const FavoritesPage: React.FC = () => {
 
                             <button
                               onClick={() => removeFavoriteCasting(call.id)}
-                              className="p-1.5 rounded-lg bg-white/5 hover:bg-rose-500/20 text-zinc-400 hover:text-rose-400 transition-colors border border-white/5"
+                              className="p-1.5 rounded-lg bg-white/5 hover:bg-amber-500/20 text-zinc-400 hover:text-amber-400 transition-colors border border-white/5"
                               title="Remove from saved list"
                             >
-                              <Heart className="w-4 h-4 fill-rose-500 text-rose-500 hover:opacity-75" />
+                              <Heart className="w-4 h-4 fill-amber-400 text-amber-400 hover:opacity-75" />
                             </button>
                           </div>
 
@@ -406,7 +406,7 @@ export const FavoritesPage: React.FC = () => {
                             to={`/casting/${call.id}`}
                             className="block group"
                           >
-                            <h3 className="text-base font-bold text-white group-hover:text-rose-300 transition-colors leading-snug">
+                            <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors leading-snug">
                               {call.title}
                             </h3>
                           </Link>
@@ -430,7 +430,7 @@ export const FavoritesPage: React.FC = () => {
                             </div>
                             <Link
                               to={`/casting/${call.id}`}
-                              className="text-rose-400 hover:text-rose-300 font-semibold flex items-center gap-0.5"
+                              className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-0.5"
                             >
                               <span>View Notice</span>
                               <ExternalLink className="w-3 h-3" />
@@ -438,9 +438,9 @@ export const FavoritesPage: React.FC = () => {
                           </div>
 
                           {/* Personal Note Box */}
-                          <div className="p-3 rounded-xl bg-black/40 border border-white/5 space-y-1.5 text-xs">
+                          <div className="p-3 rounded-xl bg-black/40 border border-amber-500/15 space-y-1.5 text-xs">
                             <div className="flex items-center justify-between text-[10px] text-zinc-400">
-                              <span className="font-semibold text-rose-300 flex items-center gap-1">
+                              <span className="font-semibold text-amber-300 flex items-center gap-1">
                                 <FileEdit className="w-3 h-3" />
                                 Personal Audition Note
                               </span>
@@ -461,7 +461,7 @@ export const FavoritesPage: React.FC = () => {
                                   value={tempNote}
                                   onChange={e => setTempNote(e.target.value)}
                                   placeholder="e.g. Prepare 2-minute Malayalam monologue; shoot in Kochi..."
-                                  className="w-full bg-black/60 border border-rose-500/40 rounded-lg p-2 text-xs text-white placeholder:text-zinc-600 focus:outline-none"
+                                  className="w-full bg-black/60 border border-amber-500/40 rounded-lg p-2 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-amber-400"
                                 />
                                 <div className="flex justify-end gap-1.5">
                                   <button
@@ -472,7 +472,7 @@ export const FavoritesPage: React.FC = () => {
                                   </button>
                                   <button
                                     onClick={() => handleSaveNote(call.id)}
-                                    className="px-2.5 py-1 rounded bg-rose-600 hover:bg-rose-500 text-white text-[10px] font-semibold flex items-center gap-1"
+                                    className="px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-zinc-950 text-[10px] font-bold flex items-center gap-1"
                                   >
                                     <Check className="w-3 h-3" />
                                     Save
@@ -492,7 +492,7 @@ export const FavoritesPage: React.FC = () => {
                           <span className="text-[11px] text-zinc-500">Quick Audition Flow</span>
                           <Link
                             to={`/casting/${call.id}`}
-                            className="px-3.5 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs transition-colors shadow"
+                            className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold text-xs transition-colors shadow"
                           >
                             Apply for Roles
                           </Link>
@@ -508,7 +508,7 @@ export const FavoritesPage: React.FC = () => {
           {/* SECTION 2: SHOOTING LOCATIONS */}
           {(activeTab === 'all' || activeTab === 'locations') && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-white/5 pb-2">
+              <div className="flex items-center justify-between border-b border-amber-500/20 pb-2">
                 <div className="flex items-center gap-2">
                   <Camera className="w-4 h-4 text-amber-400" />
                   <h2 className="text-base font-bold text-white font-cinematic">
@@ -525,7 +525,7 @@ export const FavoritesPage: React.FC = () => {
               </div>
 
               {filteredLocations.length === 0 ? (
-                <div className="p-8 text-center rounded-xl bg-[#12141c] border border-white/5 text-zinc-400 text-xs">
+                <div className="p-8 text-center rounded-xl bg-[#0d0e14] border border-amber-500/10 text-zinc-400 text-xs">
                   {locationCount === 0
                     ? 'No shooting locations saved yet. Tap the heart icon on any property in the Nalukettu Registry.'
                     : 'No saved locations match your search query.'}
@@ -543,7 +543,7 @@ export const FavoritesPage: React.FC = () => {
                     return (
                       <div
                         key={loc.id}
-                        className="rounded-2xl bg-[#13151f] border border-white/10 hover:border-amber-500/30 transition-all overflow-hidden flex flex-col justify-between shadow-xl"
+                        className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 hover:border-amber-500/40 transition-all overflow-hidden flex flex-col justify-between shadow-xl"
                       >
                         <div>
                           {/* Image with overlay badge & Favorite toggle */}
@@ -590,23 +590,23 @@ export const FavoritesPage: React.FC = () => {
                                   e.stopPropagation();
                                   removeFavoriteLocation(loc.id);
                                 }}
-                                className="p-2 rounded-full bg-black/70 hover:bg-rose-500/20 text-rose-400 transition-colors backdrop-blur-md border border-white/15"
+                                className="p-2 rounded-full bg-black/70 hover:bg-amber-500/20 text-amber-400 transition-colors backdrop-blur-md border border-white/15"
                                 title="Remove location from favorites"
                               >
-                                <Heart className="w-4 h-4 fill-rose-500 text-rose-500" />
+                                <Heart className="w-4 h-4 fill-amber-400 text-amber-400" />
                               </button>
                             </div>
 
                             {/* Bottom Left Photo Count Badge */}
                             <div className="absolute bottom-3 left-3 flex items-center gap-1.5 z-10">
-                              <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/80 text-rose-300 border border-rose-500/30 backdrop-blur-sm flex items-center gap-1">
-                                <Camera className="w-3 h-3 text-rose-400" />
+                              <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/80 text-amber-300 border border-amber-500/30 backdrop-blur-sm flex items-center gap-1">
+                                <Camera className="w-3 h-3 text-amber-400" />
                                 {loc.image_urls.length} {loc.image_urls.length === 1 ? 'Photo' : 'Photos'}
                               </span>
                             </div>
 
                             {/* Bottom Right Daily Shift Rate */}
-                            <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md text-xs font-bold text-white border border-white/15 z-10">
+                            <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md text-xs font-bold text-amber-300 border border-amber-500/30 z-10">
                               {loc.pricing_text}
                             </div>
                           </Link>
@@ -654,7 +654,7 @@ export const FavoritesPage: React.FC = () => {
                                 </h3>
                               </Link>
                               <div className="flex items-center gap-1.5 text-[11px] text-zinc-400 mt-1">
-                                <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                                <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                                 <span>{loc.city}, {loc.district} District</span>
                               </div>
                             </div>
@@ -678,13 +678,13 @@ export const FavoritesPage: React.FC = () => {
                                 <span>Gen: {loc.generator_access ? 'Available' : 'None'}</span>
                               </div>
                               <div className="flex items-center gap-1.5">
-                                <Moon className="w-3.5 h-3.5 text-indigo-400" />
+                                <Moon className="w-3.5 h-3.5 text-yellow-400" />
                                 <span>Night: {loc.night_shoot_allowed ? 'Allowed' : 'Day Only'}</span>
                               </div>
                             </div>
 
                             {/* Personal Location Note Box */}
-                            <div className="p-3 rounded-xl bg-black/40 border border-white/5 space-y-1.5 text-xs mt-2">
+                            <div className="p-3 rounded-xl bg-black/40 border border-amber-500/15 space-y-1.5 text-xs mt-2">
                               <div className="flex items-center justify-between text-[10px] text-zinc-400">
                                 <span className="font-semibold text-amber-300 flex items-center gap-1">
                                   <FileEdit className="w-3 h-3" />
@@ -707,7 +707,7 @@ export const FavoritesPage: React.FC = () => {
                                     value={tempNote}
                                     onChange={e => setTempNote(e.target.value)}
                                     placeholder="e.g. Discuss 3-day rental bundle with manager for October schedule..."
-                                    className="w-full bg-black/60 border border-amber-500/40 rounded-lg p-2 text-xs text-white placeholder:text-zinc-600 focus:outline-none"
+                                    className="w-full bg-black/60 border border-amber-500/40 rounded-lg p-2 text-xs text-white placeholder:text-zinc-600 focus:outline-none focus:border-amber-400"
                                   />
                                   <div className="flex justify-end gap-1.5">
                                     <button
@@ -718,7 +718,7 @@ export const FavoritesPage: React.FC = () => {
                                     </button>
                                     <button
                                       onClick={() => handleSaveNote(loc.id)}
-                                      className="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-500 text-white text-[10px] font-semibold flex items-center gap-1"
+                                      className="px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-400 text-zinc-950 text-[10px] font-bold flex items-center gap-1"
                                     >
                                       <Check className="w-3 h-3" />
                                       Save
@@ -770,7 +770,7 @@ export const FavoritesPage: React.FC = () => {
 
                             <button
                               onClick={() => setSelectedLocationForInquiry(loc)}
-                              className="px-3.5 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs transition-colors shadow flex items-center gap-1.5 active:scale-95"
+                              className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs transition-colors shadow flex items-center gap-1.5 active:scale-95"
                             >
                               <Calendar className="w-3.5 h-3.5" />
                               <span>Plan / Book</span>
@@ -790,8 +790,8 @@ export const FavoritesPage: React.FC = () => {
       {/* Clear All Confirmation Modal */}
       {confirmClearOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="w-full max-w-sm rounded-2xl bg-[#14161f] border border-white/15 p-6 space-y-4 text-white shadow-2xl">
-            <div className="flex items-center gap-3 text-rose-400">
+          <div className="w-full max-w-sm rounded-2xl bg-[#0d0e14] border border-amber-500/30 p-6 space-y-4 text-white shadow-2xl">
+            <div className="flex items-center gap-3 text-red-400">
               <Trash2 className="w-6 h-6" />
               <h3 className="text-base font-bold font-cinematic">Clear All Saved Items?</h3>
             </div>
@@ -810,7 +810,7 @@ export const FavoritesPage: React.FC = () => {
                   clearAllFavorites();
                   setConfirmClearOpen(false);
                 }}
-                className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold"
+                className="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-semibold"
               >
                 Yes, Clear All
               </button>

@@ -146,8 +146,8 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
         onClick={() => setIsOpen(!isOpen)}
         className={`relative p-2 rounded-xl transition-all duration-200 group ${
           isOpen 
-            ? 'bg-rose-500/20 text-rose-300 ring-1 ring-rose-500/40' 
-            : 'text-zinc-300 hover:text-white hover:bg-white/10'
+            ? 'bg-amber-500/20 text-amber-300 ring-1 ring-amber-500/40' 
+            : 'text-zinc-300 hover:text-amber-200 hover:bg-white/10'
         }`}
         aria-label="Notifications"
         aria-expanded={isOpen}
@@ -157,16 +157,16 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
             : 'Notifications'
         }
       >
-        <Bell className={`w-5 h-5 transition-transform group-hover:scale-110 ${currentUnreadCount > 0 ? 'text-zinc-200' : 'text-zinc-400'}`} />
+        <Bell className={`w-5 h-5 transition-transform group-hover:scale-110 ${currentUnreadCount > 0 ? 'text-amber-400' : 'text-zinc-400'}`} />
 
         {/* Dynamic Badge with Unread Counter */}
         {currentUnreadCount > 0 && (
           <span 
             id="navbar-notification-badge"
-            className="absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full bg-rose-600 text-white text-[10px] font-extrabold shadow-lg shadow-rose-900/60 ring-2 ring-[#0c0d10] animate-in zoom-in-50 duration-200"
+            className="absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-zinc-950 text-[10px] font-extrabold shadow-lg shadow-amber-950/60 ring-2 ring-[#0c0d10] animate-in zoom-in-50 duration-200"
           >
             {currentUnreadCount > 9 ? '9+' : currentUnreadCount}
-            <span className="absolute inset-0 rounded-full bg-rose-400/40 animate-ping pointer-events-none" />
+            <span className="absolute inset-0 rounded-full bg-amber-400/40 animate-ping pointer-events-none" />
           </span>
         )}
       </button>
@@ -177,19 +177,19 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           id="notification-dropdown-panel"
           className={`absolute ${
             isMobile ? 'right-0 w-[calc(100vw-2rem)] max-w-sm' : 'right-0 w-96 sm:w-[420px]'
-          } mt-2 rounded-2xl bg-[#12141c]/95 backdrop-blur-xl border border-white/15 shadow-2xl z-[100] overflow-hidden text-white animate-in fade-in slide-in-from-top-2 duration-150`}
+          } mt-2 rounded-2xl bg-[#0d0e14]/95 backdrop-blur-xl border border-amber-500/30 shadow-2xl z-[100] overflow-hidden text-white animate-in fade-in slide-in-from-top-2 duration-150`}
         >
           {/* Header */}
-          <div className="p-3.5 bg-gradient-to-r from-[#171924] to-[#12141c] border-b border-white/10 flex items-center justify-between gap-3">
+          <div className="p-3.5 bg-gradient-to-r from-[#151720] via-black to-[#0d0e14] border-b border-amber-500/20 flex items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-rose-400">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400">
                 <Bell className="w-4 h-4" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="text-sm font-bold text-white tracking-tight">Alerts & Notifications</h3>
                   {currentUnreadCount > 0 && (
-                    <span className="px-1.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-[10px] font-semibold border border-rose-500/30">
+                    <span className="px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/30">
                       {currentUnreadCount} new
                     </span>
                   )}
@@ -203,7 +203,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                 <button
                   id="mark-all-read-btn"
                   onClick={markAllNotificationsAsRead}
-                  className="px-2 py-1 rounded-md text-[11px] text-rose-300 hover:text-white hover:bg-rose-500/20 transition-colors flex items-center gap-1 font-medium"
+                  className="px-2 py-1 rounded-md text-[11px] text-amber-300 hover:text-white hover:bg-amber-500/20 transition-colors flex items-center gap-1 font-semibold"
                   title="Mark all notifications as read"
                 >
                   <CheckCheck className="w-3.5 h-3.5" />
@@ -221,19 +221,19 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           </div>
 
           {/* Quick Filter Category Tabs */}
-          <div className="px-3 pt-2.5 pb-2 bg-[#0e1017] border-b border-white/10 flex items-center gap-1.5 text-xs">
+          <div className="px-3 pt-2.5 pb-2 bg-[#090a0f] border-b border-amber-500/15 flex items-center gap-1.5 text-xs">
             <button
               id="filter-all-notifs-btn"
               onClick={() => setActiveTab('all')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 ${
                 activeTab === 'all'
-                  ? 'bg-white/15 text-white shadow-sm font-semibold'
+                  ? 'bg-amber-500/20 text-amber-200 border border-amber-500/30 shadow-sm font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
               }`}
             >
               <span>All</span>
               <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                activeTab === 'all' ? 'bg-white/20 text-white' : 'bg-white/5 text-zinc-400'
+                activeTab === 'all' ? 'bg-amber-500/30 text-amber-200' : 'bg-white/5 text-zinc-400'
               }`}>
                 {userNotifications.length}
               </span>
@@ -244,14 +244,14 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               onClick={() => setActiveTab('matches')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 ${
                 activeTab === 'matches'
-                  ? 'bg-rose-600/30 text-rose-200 border border-rose-500/40 shadow-sm font-semibold'
+                  ? 'bg-amber-500/30 text-amber-200 border border-amber-500/50 shadow-sm font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
               }`}
             >
-              <Clapperboard className="w-3.5 h-3.5 text-rose-400" />
+              <Clapperboard className="w-3.5 h-3.5 text-amber-400" />
               <span>Casting Matches</span>
               {unreadMatchesCount > 0 ? (
-                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-rose-600 text-white font-bold">
+                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-zinc-950 font-extrabold">
                   {unreadMatchesCount}
                 </span>
               ) : (
@@ -266,14 +266,14 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               onClick={() => setActiveTab('locations')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 ${
                 activeTab === 'locations'
-                  ? 'bg-amber-600/30 text-amber-200 border border-amber-500/40 shadow-sm font-semibold'
+                  ? 'bg-yellow-600/30 text-yellow-200 border border-yellow-500/40 shadow-sm font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200 hover:bg-white/5'
               }`}
             >
-              <Building2 className="w-3.5 h-3.5 text-amber-400" />
+              <Building2 className="w-3.5 h-3.5 text-yellow-400" />
               <span>Bookings</span>
               {unreadLocationsCount > 0 ? (
-                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-600 text-white font-bold">
+                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-yellow-500 text-zinc-950 font-bold">
                   {unreadLocationsCount}
                 </span>
               ) : (
@@ -286,9 +286,9 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
 
           {/* Quick Summary Pill Bar when there are active matches or updates */}
           {(unreadMatchesCount > 0 || unreadLocationsCount > 0) && (
-            <div className="px-3 py-1.5 bg-rose-950/30 border-b border-rose-900/30 flex items-center justify-between text-[11px] text-rose-200">
+            <div className="px-3 py-1.5 bg-amber-950/20 border-b border-amber-900/30 flex items-center justify-between text-[11px] text-amber-200">
               <span className="flex items-center gap-1.5">
-                <Sparkles className="w-3 h-3 text-rose-400" />
+                <Sparkles className="w-3 h-3 text-amber-400" />
                 <span>
                   {unreadMatchesCount > 0 && `${unreadMatchesCount} new casting match${unreadMatchesCount > 1 ? 'es' : ''}`}
                   {unreadMatchesCount > 0 && unreadLocationsCount > 0 && ' • '}
@@ -303,7 +303,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           <div className="max-h-[380px] overflow-y-auto divide-y divide-white/5">
             {displayedNotifications.length === 0 ? (
               <div className="p-8 text-center">
-                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-3 text-zinc-500">
+                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-3 text-amber-500/40">
                   {activeTab === 'matches' ? (
                     <Clapperboard className="w-6 h-6" />
                   ) : activeTab === 'locations' ? (
@@ -329,13 +329,13 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                 <div className="mt-4 flex items-center justify-center gap-2">
                   <button
                     onClick={triggerNewCastingMatchAlert}
-                    className="px-2.5 py-1 rounded bg-rose-600/20 text-rose-300 hover:bg-rose-600/30 text-[11px] font-medium border border-rose-500/30"
+                    className="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 hover:bg-amber-500/30 text-[11px] font-semibold border border-amber-500/30"
                   >
                     + Test Match
                   </button>
                   <button
                     onClick={triggerNewLocationBookingAlert}
-                    className="px-2.5 py-1 rounded bg-amber-600/20 text-amber-300 hover:bg-amber-600/30 text-[11px] font-medium border border-amber-500/30"
+                    className="px-2.5 py-1 rounded bg-yellow-500/20 text-yellow-300 hover:bg-yellow-500/30 text-[11px] font-semibold border border-yellow-500/30"
                   >
                     + Test Booking
                   </button>
@@ -351,7 +351,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                     key={notif.id}
                     className={`p-3.5 transition-colors group relative ${
                       !notif.is_read
-                        ? 'bg-white/[0.04] border-l-2 border-l-rose-500 hover:bg-white/[0.07]'
+                        ? 'bg-amber-500/[0.06] border-l-2 border-l-amber-500 hover:bg-amber-500/[0.1]'
                         : 'hover:bg-white/[0.03] border-l-2 border-l-transparent'
                     }`}
                   >
@@ -359,7 +359,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                       {/* Icon Avatar */}
                       <div className="shrink-0 mt-0.5">
                         {isMatch ? (
-                          <div className="w-8 h-8 rounded-lg bg-rose-600/20 border border-rose-500/40 flex items-center justify-center text-rose-400 shadow-sm">
+                          <div className="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-sm">
                             <Clapperboard className="w-4 h-4" />
                           </div>
                         ) : isLocation ? (
@@ -370,7 +370,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                               className="w-9 h-9 rounded-lg object-cover border border-white/10 ring-1 ring-amber-500/30"
                             />
                           ) : (
-                            <div className="w-8 h-8 rounded-lg bg-amber-600/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-sm">
+                            <div className="w-8 h-8 rounded-lg bg-yellow-600/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 shadow-sm">
                               <Building2 className="w-4 h-4" />
                             </div>
                           )
@@ -390,7 +390,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                               <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
                                 (notif.match_score || 0) >= 90 
                                   ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' 
-                                  : 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
+                                  : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
                               }`}>
                                 <Sparkles className="w-2.5 h-2.5" />
                                 <span>{notif.match_score ? `${notif.match_score}% Match` : 'Casting Match'}</span>
@@ -398,7 +398,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                             )}
 
                             {isLocation && (
-                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">
                                 <ShieldCheck className="w-2.5 h-2.5" />
                                 <span>
                                   {notif.booking_status === 'caretaker_approved' 
@@ -411,7 +411,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                             )}
 
                             {!notif.is_read && (
-                              <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
+                              <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
                             )}
                           </div>
 
@@ -423,7 +423,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                         {/* Title & Body */}
                         <h4 
                           onClick={() => handleNotificationClick(notif)}
-                          className="text-xs font-semibold text-white hover:text-rose-300 cursor-pointer transition-colors line-clamp-1"
+                          className="text-xs font-semibold text-white hover:text-amber-300 cursor-pointer transition-colors line-clamp-1"
                         >
                           {notif.title}
                         </h4>
@@ -464,7 +464,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                         <div className="mt-2.5 flex items-center justify-between gap-2 pt-1.5 border-t border-white/5">
                           <button
                             onClick={() => handleNotificationClick(notif)}
-                            className="inline-flex items-center gap-1 text-xs font-medium text-rose-400 hover:text-rose-300 transition-colors"
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors"
                           >
                             <span>
                               {isMatch ? 'Inspect Match' : isLocation ? 'View Location Details' : 'View Details'}
@@ -476,7 +476,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                             {!notif.is_read ? (
                               <button
                                 onClick={() => markNotificationAsRead(notif.id)}
-                                className="p-1 rounded hover:bg-white/10 text-zinc-400 hover:text-zinc-200 text-[10px]"
+                                className="p-1 rounded hover:bg-white/10 text-zinc-400 hover:text-amber-200 text-[10px]"
                                 title="Mark as read"
                               >
                                 <CheckCircle2 className="w-3.5 h-3.5" />
@@ -484,7 +484,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                             ) : null}
                             <button
                               onClick={() => deleteNotification(notif.id)}
-                              className="p-1 rounded hover:bg-rose-500/20 text-zinc-500 hover:text-rose-400 text-[10px]"
+                              className="p-1 rounded hover:bg-red-500/20 text-zinc-500 hover:text-red-400 text-[10px]"
                               title="Delete notification"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -500,7 +500,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           </div>
 
           {/* Real-time simulation bar to test badge increments directly */}
-          <div className="p-2.5 bg-black/50 border-t border-white/10 flex items-center justify-between gap-2">
+          <div className="p-2.5 bg-black/60 border-t border-amber-500/20 flex items-center justify-between gap-2">
             <span className="text-[10px] text-zinc-400 font-medium hidden sm:inline">
               Simulate Live Alerts:
             </span>
@@ -508,33 +508,33 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               <button
                 id="simulate-casting-match-alert-btn"
                 onClick={triggerNewCastingMatchAlert}
-                className="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-rose-600/20 hover:bg-rose-600/30 text-rose-300 border border-rose-500/30 transition-all flex items-center gap-1"
+                className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition-all flex items-center gap-1 shadow-sm"
                 title="Simulate a new casting call match notification and increment the Navbar badge"
               >
-                <PlusCircle className="w-3 h-3 text-rose-400" />
+                <PlusCircle className="w-3 h-3 text-amber-400" />
                 <span>+ Match Alert</span>
               </button>
               <button
                 id="simulate-location-booking-alert-btn"
                 onClick={triggerNewLocationBookingAlert}
-                className="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 border border-amber-500/30 transition-all flex items-center gap-1"
+                className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-300 border border-yellow-500/40 transition-all flex items-center gap-1 shadow-sm"
                 title="Simulate an update to saved location bookings and increment the Navbar badge"
               >
-                <PlusCircle className="w-3 h-3 text-amber-400" />
+                <PlusCircle className="w-3 h-3 text-yellow-400" />
                 <span>+ Booking Alert</span>
               </button>
             </div>
           </div>
 
           {/* Footer Destination Links */}
-          <div className="p-2.5 bg-[#0e1017] border-t border-white/10 flex items-center justify-between text-xs font-medium">
+          <div className="p-2.5 bg-[#090a0f] border-t border-amber-500/15 flex items-center justify-between text-xs font-medium">
             <Link
               to="/favorites"
               onClick={() => {
                 setIsOpen(false);
                 if (onCloseMobileMenu) onCloseMobileMenu();
               }}
-              className="text-zinc-400 hover:text-white flex items-center gap-1 text-[11px]"
+              className="text-zinc-400 hover:text-amber-200 flex items-center gap-1 text-[11px]"
             >
               <span>Saved Locations Vault</span>
               <ChevronRight className="w-3 h-3" />
@@ -552,7 +552,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
                 setIsOpen(false);
                 if (onCloseMobileMenu) onCloseMobileMenu();
               }}
-              className="text-rose-400 hover:text-rose-300 flex items-center gap-1 text-[11px]"
+              className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 text-[11px]"
             >
               <span>Full Dashboard</span>
               <ChevronRight className="w-3 h-3" />

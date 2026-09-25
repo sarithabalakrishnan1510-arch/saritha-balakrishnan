@@ -30,7 +30,7 @@ export const TalentProfilePage: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-4">
         <h2 className="text-2xl font-bold text-white">Talent Profile Not Found</h2>
         <p className="text-zinc-400 text-xs">The requested actor profile does not exist or has been made private.</p>
-        <Link to="/talent" className="inline-block px-4 py-2 rounded-lg bg-rose-600 text-white text-xs font-semibold">
+        <Link to="/talent" className="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 text-xs font-bold shadow-md">
           Return to Talent Registry
         </Link>
       </div>
@@ -61,9 +61,9 @@ export const TalentProfilePage: React.FC = () => {
       </button>
 
       {/* Main Profile Header Card */}
-      <div className="rounded-2xl bg-[#12141c] border border-white/10 overflow-hidden shadow-2xl">
+      <div className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 overflow-hidden shadow-2xl">
         {/* Banner header image */}
-        <div className="h-44 w-full bg-gradient-to-r from-rose-950/80 via-zinc-900 to-black relative">
+        <div className="h-44 w-full bg-gradient-to-r from-amber-950/60 via-[#0d0e14] to-black relative">
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
@@ -77,7 +77,7 @@ export const TalentProfilePage: React.FC = () => {
                   'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&fit=crop'
                 }
                 alt={talent.stage_name || talent.user?.full_name}
-                className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl object-cover ring-4 ring-[#12141c] shadow-2xl bg-zinc-900"
+                className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl object-cover ring-4 ring-[#0d0e14] shadow-2xl bg-zinc-900 border border-amber-500/30"
               />
               <div className="space-y-1">
                 <div className="flex items-center gap-2 flex-wrap">
@@ -101,10 +101,10 @@ export const TalentProfilePage: React.FC = () => {
                   <p className="text-xs text-zinc-400">Legal Name: {talent.user.full_name}</p>
                 )}
                 <div className="flex items-center gap-3 text-xs text-zinc-300 pt-1">
-                  <span className="text-rose-400 font-semibold">{talent.primary_category}</span>
+                  <span className="text-amber-400 font-semibold">{talent.primary_category}</span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-zinc-400" />
+                    <MapPin className="w-3.5 h-3.5 text-amber-400" />
                     {talent.city}, {talent.district}
                   </span>
                 </div>
@@ -118,8 +118,8 @@ export const TalentProfilePage: React.FC = () => {
                   onClick={handleToggleShortlist}
                   className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all shadow-md ${
                     isShortlisted
-                      ? 'bg-rose-600 text-white'
-                      : 'bg-white/10 hover:bg-white/15 text-white border border-white/15'
+                      ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold'
+                      : 'bg-white/10 hover:bg-white/15 text-white border border-amber-500/20'
                   }`}
                 >
                   {isShortlisted ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
@@ -137,7 +137,7 @@ export const TalentProfilePage: React.FC = () => {
           </div>
 
           {/* Quick Stats Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-xl bg-black/60 border border-amber-500/10 text-xs">
             <div>
               <span className="text-zinc-500 block text-[11px]">Playing Age Range</span>
               <span className="text-white font-semibold text-sm">
@@ -171,9 +171,9 @@ export const TalentProfilePage: React.FC = () => {
         {/* Left 2 Cols */}
         <div className="lg:col-span-2 space-y-6">
           {/* Bio & Artistic Statement */}
-          <div className="rounded-2xl bg-[#12141c] border border-white/10 p-6 space-y-3">
+          <div className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 p-6 space-y-3 shadow-lg">
             <h3 className="text-base font-bold text-white font-cinematic flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-rose-400" />
+              <Sparkles className="w-4 h-4 text-amber-400" />
               <span>Biography & Background</span>
             </h3>
             <p className="text-xs text-zinc-300 leading-relaxed whitespace-pre-line">
@@ -182,16 +182,16 @@ export const TalentProfilePage: React.FC = () => {
           </div>
 
           {/* Languages & Malayalam Dialects */}
-          <div className="rounded-2xl bg-[#12141c] border border-white/10 p-6 space-y-3">
+          <div className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 p-6 space-y-3 shadow-lg">
             <h3 className="text-base font-bold text-white font-cinematic flex items-center gap-2">
-              <Languages className="w-4 h-4 text-rose-400" />
+              <Languages className="w-4 h-4 text-amber-400" />
               <span>Languages & Dialects</span>
             </h3>
             <div className="flex flex-wrap gap-2 pt-1">
               {(talent.languages || []).map(lang => (
                 <span
                   key={lang}
-                  className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-zinc-200 font-medium"
+                  className="px-3 py-1 rounded-lg bg-white/5 border border-amber-500/20 text-xs text-zinc-200 font-medium"
                 >
                   {lang}
                 </span>
@@ -200,9 +200,9 @@ export const TalentProfilePage: React.FC = () => {
           </div>
 
           {/* Experience & Past Filmography */}
-          <div className="rounded-2xl bg-[#12141c] border border-white/10 p-6 space-y-4">
+          <div className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 p-6 space-y-4 shadow-lg">
             <h3 className="text-base font-bold text-white font-cinematic flex items-center gap-2">
-              <Film className="w-4 h-4 text-rose-400" />
+              <Film className="w-4 h-4 text-amber-400" />
               <span>Screen & Stage Credits</span>
             </h3>
             {(!talent.experience || talent.experience.length === 0) ? (
@@ -213,7 +213,7 @@ export const TalentProfilePage: React.FC = () => {
                   <div key={exp.id} className="pt-3 first:pt-0 flex items-start justify-between gap-4 text-xs">
                     <div>
                       <h4 className="font-bold text-white">{exp.title}</h4>
-                      <p className="text-rose-300 font-medium text-[11px]">Role: {exp.role_name}</p>
+                      <p className="text-amber-300 font-medium text-[11px]">Role: {exp.role_name}</p>
                       {exp.director && (
                         <p className="text-zinc-400 text-[11px]">Director: {exp.director}</p>
                       )}
@@ -233,7 +233,7 @@ export const TalentProfilePage: React.FC = () => {
           </div>
 
           {/* Media / Photos */}
-          <div className="rounded-2xl bg-[#12141c] border border-white/10 p-6 space-y-4">
+          <div className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 p-6 space-y-4 shadow-lg">
             <h3 className="text-base font-bold text-white font-cinematic">
               Photos & Headshots ({(talent.media || []).length})
             </h3>
@@ -260,7 +260,7 @@ export const TalentProfilePage: React.FC = () => {
         <div className="space-y-6">
           {/* Showreel / Video Link */}
           {talent.showreel_url && (
-            <div className="rounded-2xl bg-[#12141c] border border-white/10 p-5 space-y-3">
+            <div className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 p-5 space-y-3 shadow-lg">
               <h4 className="text-sm font-bold text-white flex items-center gap-2">
                 <Video className="w-4 h-4 text-emerald-400" />
                 <span>Video Showreel</span>
@@ -277,7 +277,7 @@ export const TalentProfilePage: React.FC = () => {
           )}
 
           {/* Specialized Skills */}
-          <div className="rounded-2xl bg-[#12141c] border border-white/10 p-5 space-y-3">
+          <div className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 p-5 space-y-3 shadow-lg">
             <h4 className="text-sm font-bold text-white flex items-center gap-2">
               <Award className="w-4 h-4 text-amber-400" />
               <span>Specialized Skills</span>
@@ -311,9 +311,9 @@ export const TalentProfilePage: React.FC = () => {
           )}
 
           {/* Privacy & Contact Masking Box */}
-          <div className="rounded-2xl bg-black/40 border border-white/10 p-5 space-y-3 text-xs">
+          <div className="rounded-2xl bg-black/40 border border-amber-500/20 p-5 space-y-3 text-xs">
             <div className="flex items-center gap-2 text-zinc-300 font-bold">
-              <Lock className="w-4 h-4 text-rose-400" />
+              <Lock className="w-4 h-4 text-amber-400" />
               <span>Private Contact Masking</span>
             </div>
             <p className="text-[11px] text-zinc-400 leading-relaxed">

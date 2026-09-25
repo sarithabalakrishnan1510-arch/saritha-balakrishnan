@@ -72,8 +72,8 @@ export const ReportModal: React.FC<ReportModalProps> = ({
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex items-center gap-2 text-rose-400">
-              <ShieldAlert className="w-5 h-5 text-rose-500" />
+            <div className="flex items-center gap-2 text-amber-400">
+              <ShieldAlert className="w-5 h-5 text-amber-500" />
               <h2 className="text-lg font-bold text-white font-cinematic">Flag / Report Content</h2>
             </div>
 
@@ -88,7 +88,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({
               <select
                 value={reason}
                 onChange={e => setReason(e.target.value)}
-                className="w-full rounded-lg bg-black/60 border border-white/15 px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+                className="w-full rounded-lg bg-black/60 border border-white/15 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
               >
                 <option value="payment_scam">Unlawful Fee / Deposit / Audition Charge</option>
                 <option value="fake_identity">Impersonation / Fake Production House</option>
@@ -109,11 +109,11 @@ export const ReportModal: React.FC<ReportModalProps> = ({
                 value={description}
                 onChange={e => setDescription(e.target.value)}
                 placeholder="Describe what occurred, any phone numbers contacted, or requests for advance money..."
-                className="w-full rounded-lg bg-black/60 border border-white/15 px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-rose-500"
+                className="w-full rounded-lg bg-black/60 border border-white/15 px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400"
               />
             </div>
 
-            <div className="p-3 rounded-lg bg-rose-950/20 border border-rose-500/20 text-[11px] text-rose-300">
+            <div className="p-3 rounded-lg bg-amber-950/20 border border-amber-500/20 text-[11px] text-amber-300">
               <strong>Cast Kerala Zero-Tolerance Policy:</strong> Genuine film productions NEVER request audition fees, script registration charges, or casting portfolio money.
             </div>
 
@@ -127,7 +127,7 @@ export const ReportModal: React.FC<ReportModalProps> = ({
               </button>
               <button
                 type="submit"
-                className="px-5 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs shadow transition-all flex items-center gap-1.5"
+                className="px-5 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs shadow-md shadow-amber-950/40 transition-all flex items-center gap-1.5"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>Submit to Moderation</span>

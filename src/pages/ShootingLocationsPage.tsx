@@ -293,7 +293,7 @@ export const ShootingLocationsPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
         <div>
-          <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider block mb-1 flex items-center gap-1.5">
+          <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider block mb-1 flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
             Kerala Film Locations Registry
           </span>
@@ -327,10 +327,10 @@ export const ShootingLocationsPage: React.FC = () => {
             onClick={() => setMobileFiltersOpen(true)}
             className="lg:hidden px-3.5 py-2.5 rounded-xl bg-[#1a1c26] border border-white/15 hover:border-white/30 text-white text-xs font-semibold flex items-center gap-2 transition-colors shadow"
           >
-            <SlidersHorizontal className="w-4 h-4 text-rose-400" />
+            <SlidersHorizontal className="w-4 h-4 text-amber-400" />
             <span>Filters</span>
             {activeFiltersCount > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full bg-rose-600 text-[10px] font-bold">
+              <span className="px-1.5 py-0.2 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 text-[10px] font-bold">
                 {activeFiltersCount}
               </span>
             )}
@@ -338,7 +338,7 @@ export const ShootingLocationsPage: React.FC = () => {
 
           <button
             onClick={() => setIsAddLocationOpen(true)}
-            className="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-lg shadow-rose-900/20 flex items-center gap-1.5 transition-all hover:scale-[1.02]"
+            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs shadow-lg shadow-amber-950/40 flex items-center gap-1.5 transition-all hover:scale-[1.02]"
           >
             <PlusCircle className="w-4 h-4" />
             <span>List Shooting Property</span>
@@ -357,7 +357,7 @@ export const ShootingLocationsPage: React.FC = () => {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search mana, villa, tea estate, Nalukettu, Ottapalam, Kakkanad..."
-              className="w-full bg-[#11131c] border border-white/10 hover:border-white/20 focus:border-rose-500 rounded-xl pl-10 pr-9 py-2.5 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-all shadow-inner"
+              className="w-full bg-[#11131c] border border-white/10 hover:border-white/20 focus:border-amber-400 rounded-xl pl-10 pr-9 py-2.5 text-xs text-white placeholder:text-zinc-500 focus:outline-none transition-all shadow-inner"
             />
             {search && (
               <button
@@ -380,11 +380,11 @@ export const ShootingLocationsPage: React.FC = () => {
                   onClick={() => setFilters(prev => ({ ...prev, category: cat.id }))}
                   className={`px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 transition-all border shrink-0 ${
                     isSelected
-                      ? 'bg-rose-600 text-white border-rose-500 shadow-md shadow-rose-900/30'
+                      ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold border-amber-300 shadow-md shadow-amber-950/40'
                       : 'bg-[#12141c] hover:bg-white/10 text-zinc-400 hover:text-white border-white/10'
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-white' : cat.color}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-zinc-950' : cat.color}`} />
                   <span>{cat.label}</span>
                 </button>
               );
@@ -398,7 +398,7 @@ export const ShootingLocationsPage: React.FC = () => {
             <span className="text-zinc-500 text-[11px] font-medium">Active filters:</span>
 
             {filters.category !== 'all' && (
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-500/15 border border-rose-500/30 text-rose-300 text-[11px]">
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px]">
                 <span className="capitalize">{filters.category}</span>
                 <button
                   onClick={() => setFilters(prev => ({ ...prev, category: 'all' }))}
@@ -508,7 +508,7 @@ export const ShootingLocationsPage: React.FC = () => {
 
             <button
               onClick={handleResetFilters}
-              className="text-rose-400 hover:text-rose-300 font-semibold text-[11px] hover:underline ml-1"
+              className="text-amber-400 hover:text-amber-300 font-semibold text-[11px] hover:underline ml-1"
             >
               Clear all
             </button>
@@ -535,7 +535,7 @@ export const ShootingLocationsPage: React.FC = () => {
               <span className="font-semibold text-zinc-200">
                 Showing {filteredLocations.length} shooting {filteredLocations.length === 1 ? 'property' : 'properties'}
                 {filters.category !== 'all' && (
-                  <span className="text-rose-400 font-normal"> for {filters.category} category</span>
+                  <span className="text-amber-400 font-normal"> for {filters.category} category</span>
                 )}
               </span>
 
@@ -545,12 +545,12 @@ export const ShootingLocationsPage: React.FC = () => {
                 onClick={() => setSavedOnly(!savedOnly)}
                 className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all border ${
                   savedOnly
-                    ? 'bg-rose-600 text-white border-rose-500 shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold border-amber-300 shadow-sm'
                     : 'bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border-white/10'
                 }`}
                 title="Filter to only your saved favorite locations"
               >
-                <Heart className={`w-3.5 h-3.5 ${savedOnly ? 'fill-white text-white' : 'text-rose-400'}`} />
+                <Heart className={`w-3.5 h-3.5 ${savedOnly ? 'fill-zinc-950 text-zinc-950' : 'text-amber-400'}`} />
                 <span>Saved ({savedLocationIds.length})</span>
               </button>
             </div>
@@ -563,7 +563,7 @@ export const ShootingLocationsPage: React.FC = () => {
                 onClick={() => handleViewModeChange('grid')}
                 className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
                   viewMode === 'grid'
-                    ? 'bg-rose-600 text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold shadow-sm'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
                 title="Card Grid View"
@@ -578,7 +578,7 @@ export const ShootingLocationsPage: React.FC = () => {
                 onClick={() => handleViewModeChange('map')}
                 className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
                   viewMode === 'map'
-                    ? 'bg-rose-600 text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold shadow-sm'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
                 title="Interactive Leaflet Map View"
@@ -593,7 +593,7 @@ export const ShootingLocationsPage: React.FC = () => {
                 onClick={() => handleViewModeChange('split')}
                 className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
                   viewMode === 'split'
-                    ? 'bg-rose-600 text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold shadow-sm'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
                 title="Split Map & Grid View"
@@ -619,7 +619,7 @@ export const ShootingLocationsPage: React.FC = () => {
               </div>
               <button
                 onClick={handleResetFilters}
-                className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold transition-colors"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 font-bold text-xs hover:brightness-110 transition-all shadow"
               >
                 Reset All Filters
               </button>
@@ -651,7 +651,7 @@ export const ShootingLocationsPage: React.FC = () => {
                   <div className="space-y-4 pt-2">
                     <div className="flex items-center justify-between">
                       <h3 className="text-xs font-bold text-zinc-300 uppercase tracking-wider font-cinematic flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                        <span className="w-2 h-2 rounded-full bg-amber-400 shadow-sm shadow-amber-400/50"></span>
                         <span>Mapped Film Locations ({filteredLocations.length})</span>
                       </h3>
                       <span className="text-[11px] text-zinc-500">Click any card or map pin to inspect</span>
@@ -665,7 +665,7 @@ export const ShootingLocationsPage: React.FC = () => {
                         return (
                           <div
                             key={loc.id}
-                            className="rounded-2xl bg-[#13151f] border border-white/10 overflow-hidden hover:border-rose-500/40 transition-all flex flex-col justify-between shadow-xl group hover:shadow-2xl hover:shadow-rose-950/20"
+                            className="rounded-2xl bg-[#13151f] border border-white/10 overflow-hidden hover:border-amber-400/50 transition-all flex flex-col justify-between shadow-xl group hover:shadow-2xl hover:shadow-amber-950/20"
                           >
                             <div>
                               {/* Image Header with Badges - Clickable to open Details & Gallery */}
@@ -698,8 +698,8 @@ export const ShootingLocationsPage: React.FC = () => {
                                     </span>
                                   )}
                                   {isModern && (
-                                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-950/80 text-rose-300 border border-rose-500/40 backdrop-blur-md flex items-center gap-1 shadow-sm">
-                                      <Sparkles className="w-3 h-3 text-rose-400" />
+                                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-yellow-950/80 text-yellow-300 border border-yellow-500/40 backdrop-blur-md flex items-center gap-1 shadow-sm">
+                                      <Sparkles className="w-3 h-3 text-yellow-400" />
                                       Modern
                                     </span>
                                   )}
@@ -742,12 +742,12 @@ export const ShootingLocationsPage: React.FC = () => {
                                     }}
                                     className={`p-1.5 rounded-full backdrop-blur-md border transition-all ${
                                       isFavoriteLocation(loc.id)
-                                        ? 'bg-rose-600 text-white border-rose-500 shadow-md shadow-rose-950/40'
+                                        ? 'bg-amber-400 text-zinc-950 border-amber-300 shadow-md shadow-amber-950/40'
                                         : 'bg-black/60 hover:bg-black/80 text-zinc-300 hover:text-white border-white/20'
                                     }`}
                                     title={isFavoriteLocation(loc.id) ? 'Remove from saved favorites' : 'Save location to personal list'}
                                   >
-                                    <Heart className={`w-3.5 h-3.5 transition-transform active:scale-75 ${isFavoriteLocation(loc.id) ? 'fill-white text-white' : ''}`} />
+                                    <Heart className={`w-3.5 h-3.5 transition-transform active:scale-75 ${isFavoriteLocation(loc.id) ? 'fill-zinc-950 text-zinc-950' : 'text-amber-400'}`} />
                                   </button>
                                 </div>
 
@@ -756,8 +756,8 @@ export const ShootingLocationsPage: React.FC = () => {
                                   <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/80 text-zinc-200 border border-white/10 backdrop-blur-sm">
                                     {loc.category_name}
                                   </span>
-                                  <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/80 text-rose-300 border border-rose-500/30 backdrop-blur-sm flex items-center gap-1">
-                                    <Camera className="w-3 h-3 text-rose-400" />
+                                  <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/80 text-amber-300 border border-amber-500/30 backdrop-blur-sm flex items-center gap-1">
+                                    <Camera className="w-3 h-3 text-amber-400" />
                                     {loc.image_urls.length} {loc.image_urls.length === 1 ? 'Photo' : 'Photos'}
                                   </span>
                                 </div>
@@ -775,13 +775,13 @@ export const ShootingLocationsPage: React.FC = () => {
                                   className="cursor-pointer"
                                 >
                                   <div className="flex items-start justify-between gap-2">
-                                    <h3 className="text-base font-bold text-white group-hover:text-rose-300 transition-colors leading-snug">
+                                    <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors leading-snug">
                                       {loc.title}
                                     </h3>
                                     <LocationRatingBadge locationId={loc.id} size="sm" />
                                   </div>
                                   <div className="flex items-center gap-1.5 text-[11px] text-zinc-400 mt-1">
-                                    <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                                     <span>{loc.city}, {loc.district} District</span>
                                   </div>
                                 </div>
@@ -820,7 +820,7 @@ export const ShootingLocationsPage: React.FC = () => {
                                   onClick={() => handleOpenDetails(loc)}
                                   className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border border-white/10 font-medium text-xs transition-colors flex items-center gap-1.5"
                                 >
-                                  <Eye className="w-3.5 h-3.5 text-rose-400" />
+                                  <Eye className="w-3.5 h-3.5 text-amber-400" />
                                   <span>Scout & Reviews</span>
                                 </button>
                                 <ShareButton
@@ -855,7 +855,7 @@ export const ShootingLocationsPage: React.FC = () => {
                                     e.stopPropagation();
                                     setSelectedLocationForInquiry(loc);
                                   }}
-                                  className="px-3.5 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs transition-all shadow hover:shadow-rose-900/40 flex items-center gap-1.5 active:scale-95"
+                                  className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs transition-all shadow shadow-amber-950/40 flex items-center gap-1.5 active:scale-95"
                                 >
                                   <Calendar className="w-3.5 h-3.5" />
                                   <span>Book Shift</span>
@@ -874,9 +874,9 @@ export const ShootingLocationsPage: React.FC = () => {
               {viewMode === 'grid' && (
                 <div className="space-y-5">
                   {/* Quick Visual Map Banner */}
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3.5 px-4 rounded-2xl bg-gradient-to-r from-[#171926] via-[#12141f] to-[#1e1520] border border-white/10 shadow-sm">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3.5 px-4 rounded-2xl bg-gradient-to-r from-[#171926] via-[#12141f] to-[#1e1910] border border-amber-500/20 shadow-sm">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center border border-rose-500/30 shrink-0">
+                      <div className="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30 shrink-0">
                         <Map className="w-4 h-4 text-amber-400" />
                       </div>
                       <div>
@@ -893,7 +893,7 @@ export const ShootingLocationsPage: React.FC = () => {
                       id="open-map-banner-btn"
                       type="button"
                       onClick={() => handleViewModeChange('map')}
-                      className="px-3.5 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow hover:scale-[1.02] shrink-0"
+                      className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow hover:scale-[1.02] shrink-0"
                     >
                       <Map className="w-3.5 h-3.5" />
                       <span>Switch to Visual Map</span>
@@ -908,7 +908,7 @@ export const ShootingLocationsPage: React.FC = () => {
                       return (
                         <div
                           key={loc.id}
-                          className="rounded-2xl bg-[#13151f] border border-white/10 overflow-hidden hover:border-rose-500/40 transition-all flex flex-col justify-between shadow-xl group hover:shadow-2xl hover:shadow-rose-950/20"
+                          className="rounded-2xl bg-[#13151f] border border-white/10 overflow-hidden hover:border-amber-400/50 transition-all flex flex-col justify-between shadow-xl group hover:shadow-2xl hover:shadow-amber-950/20"
                         >
                           <div>
                             {/* Image Header with Badges - Clickable to open Details & Gallery */}
@@ -941,8 +941,8 @@ export const ShootingLocationsPage: React.FC = () => {
                                   </span>
                                 )}
                                 {isModern && (
-                                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-950/80 text-rose-300 border border-rose-500/40 backdrop-blur-md flex items-center gap-1 shadow-sm">
-                                    <Sparkles className="w-3 h-3 text-rose-400" />
+                                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-yellow-950/80 text-yellow-300 border border-yellow-500/40 backdrop-blur-md flex items-center gap-1 shadow-sm">
+                                    <Sparkles className="w-3 h-3 text-yellow-400" />
                                     Modern
                                   </span>
                                 )}
@@ -985,13 +985,13 @@ export const ShootingLocationsPage: React.FC = () => {
                                   }}
                                   className={`p-1.5 rounded-full backdrop-blur-md border transition-all ${
                                     isFavoriteLocation(loc.id)
-                                      ? 'bg-rose-600 text-white border-rose-500 shadow-md shadow-rose-950/40'
+                                      ? 'bg-amber-400 text-zinc-950 border-amber-300 shadow-md shadow-amber-950/40'
                                       : 'bg-black/60 hover:bg-black/80 text-zinc-300 hover:text-white border-white/20'
                                   }`}
                                   title={isFavoriteLocation(loc.id) ? 'Remove from saved favorites' : 'Save location to personal list'}
                                   aria-label={isFavoriteLocation(loc.id) ? 'Remove from saved favorites' : 'Save location to personal list'}
                                 >
-                                  <Heart className={`w-3.5 h-3.5 transition-transform active:scale-75 ${isFavoriteLocation(loc.id) ? 'fill-white text-white' : ''}`} />
+                                  <Heart className={`w-3.5 h-3.5 transition-transform active:scale-75 ${isFavoriteLocation(loc.id) ? 'fill-zinc-950 text-zinc-950' : 'text-amber-400'}`} />
                                 </button>
                               </div>
 
@@ -1000,8 +1000,8 @@ export const ShootingLocationsPage: React.FC = () => {
                                 <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/80 text-zinc-200 border border-white/10 backdrop-blur-sm">
                                   {loc.category_name}
                                 </span>
-                                <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/80 text-rose-300 border border-rose-500/30 backdrop-blur-sm flex items-center gap-1">
-                                  <Camera className="w-3 h-3 text-rose-400" />
+                                <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/80 text-amber-300 border border-amber-500/30 backdrop-blur-sm flex items-center gap-1">
+                                  <Camera className="w-3 h-3 text-amber-400" />
                                   {loc.image_urls.length} {loc.image_urls.length === 1 ? 'Photo' : 'Photos'}
                                 </span>
                               </div>
@@ -1019,13 +1019,13 @@ export const ShootingLocationsPage: React.FC = () => {
                                 className="cursor-pointer"
                               >
                                 <div className="flex items-start justify-between gap-2">
-                                  <h3 className="text-base font-bold text-white group-hover:text-rose-300 transition-colors leading-snug">
+                                  <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors leading-snug">
                                     {loc.title}
                                   </h3>
                                   <LocationRatingBadge locationId={loc.id} size="sm" />
                                 </div>
                                 <div className="flex items-center gap-1.5 text-[11px] text-zinc-400 mt-1">
-                                  <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                                  <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                                   <span>{loc.city}, {loc.district} District</span>
                                 </div>
                               </div>
@@ -1065,7 +1065,7 @@ export const ShootingLocationsPage: React.FC = () => {
                                 onClick={() => handleOpenDetails(loc)}
                                 className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border border-white/10 font-medium text-xs transition-colors flex items-center gap-1.5"
                               >
-                                <Eye className="w-3.5 h-3.5 text-rose-400" />
+                                <Eye className="w-3.5 h-3.5 text-amber-400" />
                                 <span>Scout & Reviews</span>
                               </button>
                               <ShareButton
@@ -1102,7 +1102,7 @@ export const ShootingLocationsPage: React.FC = () => {
                                   e.stopPropagation();
                                   setSelectedLocationForInquiry(loc);
                                 }}
-                                className="px-3.5 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs transition-all shadow hover:shadow-rose-900/40 flex items-center gap-1.5 active:scale-95"
+                                className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs transition-all shadow shadow-amber-950/40 flex items-center gap-1.5 active:scale-95"
                               >
                                 <Calendar className="w-3.5 h-3.5" />
                                 <span>Book Shift</span>
@@ -1141,7 +1141,7 @@ export const ShootingLocationsPage: React.FC = () => {
               </button>
               <button
                 onClick={() => setMobileFiltersOpen(false)}
-                className="w-2/3 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow"
+                className="w-2/3 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs shadow-md shadow-amber-950/40"
               >
                 Apply ({filteredLocations.length} Results)
               </button>
@@ -1160,9 +1160,9 @@ export const ShootingLocationsPage: React.FC = () => {
       {/* Add Location Modal */}
       {isAddLocationOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="w-full max-w-lg rounded-2xl bg-[#14161f] border border-white/15 p-6 space-y-4 text-white max-h-[90vh] overflow-y-auto">
+          <div className="w-full max-w-lg rounded-2xl bg-[#14161f] border border-amber-500/30 p-6 space-y-4 text-white max-h-[90vh] overflow-y-auto shadow-2xl">
             <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <h3 className="text-lg font-bold font-cinematic">List Shooting Property / Location</h3>
+              <h3 className="text-lg font-bold font-cinematic text-amber-300">List Shooting Property / Location</h3>
               <button
                 onClick={() => setIsAddLocationOpen(false)}
                 className="p-1 rounded-lg text-zinc-400 hover:text-white"
@@ -1187,7 +1187,7 @@ export const ShootingLocationsPage: React.FC = () => {
                     value={locTitle}
                     onChange={e => setLocTitle(e.target.value)}
                     placeholder="e.g. Traditional Nalukettu with Courtyard & Pond"
-                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-rose-500"
+                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
@@ -1202,7 +1202,7 @@ export const ShootingLocationsPage: React.FC = () => {
                         type="checkbox"
                         checked={locIndoor}
                         onChange={e => setLocIndoor(e.target.checked)}
-                        className="rounded border-white/20 bg-zinc-800 text-rose-600"
+                        className="rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
                       />
                       <span>Indoor Shooting Sets</span>
                     </label>
@@ -1211,7 +1211,7 @@ export const ShootingLocationsPage: React.FC = () => {
                         type="checkbox"
                         checked={locOutdoor}
                         onChange={e => setLocOutdoor(e.target.checked)}
-                        className="rounded border-white/20 bg-zinc-800 text-rose-600"
+                        className="rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
                       />
                       <span>Outdoor / Grounds</span>
                     </label>
@@ -1220,7 +1220,7 @@ export const ShootingLocationsPage: React.FC = () => {
                         type="checkbox"
                         checked={locHistorical}
                         onChange={e => setLocHistorical(e.target.checked)}
-                        className="rounded border-white/20 bg-zinc-800 text-rose-600"
+                        className="rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
                       />
                       <span>Historical / Heritage</span>
                     </label>
@@ -1229,7 +1229,7 @@ export const ShootingLocationsPage: React.FC = () => {
                         type="checkbox"
                         checked={locModern}
                         onChange={e => setLocModern(e.target.checked)}
-                        className="rounded border-white/20 bg-zinc-800 text-rose-600"
+                        className="rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
                       />
                       <span>Modern / Contemporary</span>
                     </label>
@@ -1242,7 +1242,7 @@ export const ShootingLocationsPage: React.FC = () => {
                     <select
                       value={locCategory}
                       onChange={e => setLocCategory(e.target.value)}
-                      className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                      className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
                     >
                       <option value="Traditional Kerala House">Traditional Kerala House (Mana/Tharavadu)</option>
                       <option value="Villa">Modern Villa</option>
@@ -1258,7 +1258,7 @@ export const ShootingLocationsPage: React.FC = () => {
                     <select
                       value={locDistrict}
                       onChange={e => setLocDistrict(e.target.value as KeralaDistrict)}
-                      className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                      className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
                     >
                       {KERALA_DISTRICTS.map(d => (
                         <option key={d} value={d}>{d}</option>
@@ -1275,7 +1275,7 @@ export const ShootingLocationsPage: React.FC = () => {
                       value={locCity}
                       onChange={e => setLocCity(e.target.value)}
                       placeholder="e.g. Ottapalam"
-                      className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                      className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
                     />
                   </div>
                   <div>
@@ -1285,7 +1285,7 @@ export const ShootingLocationsPage: React.FC = () => {
                       value={locPrice}
                       onChange={e => setLocPrice(e.target.value)}
                       placeholder="₹25,000 / day"
-                      className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                      className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
                     />
                   </div>
                 </div>
@@ -1297,7 +1297,7 @@ export const ShootingLocationsPage: React.FC = () => {
                       type="checkbox"
                       checked={locNightShoot}
                       onChange={e => setLocNightShoot(e.target.checked)}
-                      className="rounded border-white/20 bg-zinc-800 text-rose-600"
+                      className="rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
                     />
                     <span>Night Shoots Permitted</span>
                   </label>
@@ -1306,7 +1306,7 @@ export const ShootingLocationsPage: React.FC = () => {
                       type="checkbox"
                       checked={locGenerator}
                       onChange={e => setLocGenerator(e.target.checked)}
-                      className="rounded border-white/20 bg-zinc-800 text-rose-600"
+                      className="rounded border-white/20 bg-zinc-800 text-amber-500 focus:ring-amber-400"
                     />
                     <span>Generator Access Ready</span>
                   </label>
@@ -1321,7 +1321,7 @@ export const ShootingLocationsPage: React.FC = () => {
                     value={locDesc}
                     onChange={e => setLocDesc(e.target.value)}
                     placeholder="Describe courtyard, road approach, parking space, acoustic sound suitability..."
-                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
@@ -1335,7 +1335,7 @@ export const ShootingLocationsPage: React.FC = () => {
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold"
+                    className="px-5 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold transition-all shadow-md shadow-amber-950/40"
                   >
                     Register Location
                   </button>

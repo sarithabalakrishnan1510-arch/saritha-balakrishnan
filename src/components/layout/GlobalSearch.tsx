@@ -380,7 +380,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
           placeholder="Search talent, casting calls, locations..."
-          className="w-full bg-[#14161f]/90 hover:bg-[#181a26] focus:bg-[#161824] border border-white/10 hover:border-white/20 focus:border-rose-500/80 rounded-xl pl-9 pr-14 sm:pr-20 py-1.5 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-rose-500/40 transition-all duration-200 shadow-inner"
+          className="w-full bg-[#0d0e14] hover:bg-[#141620] focus:bg-[#12141c] border border-amber-500/20 hover:border-amber-500/40 focus:border-amber-400 rounded-xl pl-9 pr-14 sm:pr-20 py-1.5 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-amber-400/30 transition-all duration-200 shadow-inner"
         />
 
         <div className="absolute right-2 flex items-center gap-1">
@@ -396,7 +396,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
               <X className="w-3.5 h-3.5" />
             </button>
           ) : (
-            <kbd className="hidden lg:inline-flex items-center gap-0.5 text-[10px] px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-zinc-400 font-mono select-none">
+            <kbd className="hidden lg:inline-flex items-center gap-0.5 text-[10px] px-1.5 py-0.5 rounded bg-white/5 border border-amber-500/20 text-amber-400/80 font-mono select-none">
               <span className="text-[11px]">⌘</span>K
             </kbd>
           )}
@@ -406,11 +406,11 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
       {/* Dropdown Results / Command Palette Overlay */}
       {isOpen && (
         <div 
-          className="absolute left-0 right-0 sm:left-auto sm:right-0 mt-2 w-full sm:w-[500px] md:w-[580px] max-w-[95vw] rounded-2xl bg-[#12141c] border border-white/15 shadow-2xl z-50 overflow-hidden backdrop-blur-xl text-white animate-in fade-in zoom-in-95 duration-150"
+          className="absolute left-0 right-0 sm:left-auto sm:right-0 mt-2 w-full sm:w-[500px] md:w-[580px] max-w-[95vw] rounded-2xl bg-[#0d0e14] border border-amber-500/30 shadow-2xl z-50 overflow-hidden backdrop-blur-xl text-white animate-in fade-in zoom-in-95 duration-150"
           style={{ maxHeight: '85vh' }}
         >
           {/* Header & Category Tabs */}
-          <div className="p-3 border-b border-white/10 bg-black/40 flex items-center justify-between gap-2">
+          <div className="p-3 border-b border-amber-500/20 bg-black/60 flex items-center justify-between gap-2">
             <div className="flex items-center gap-1.5 overflow-x-auto py-0.5 no-scrollbar">
               <button
                 type="button"
@@ -420,7 +420,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
                   selectedCategory === 'all'
-                    ? 'bg-rose-600 text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-sm'
                     : 'bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10'
                 }`}
               >
@@ -434,11 +434,11 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors ${
                   selectedCategory === 'talent'
-                    ? 'bg-rose-600 text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-sm'
                     : 'bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10'
                 }`}
               >
-                <User className="w-3 h-3 text-rose-300" />
+                <User className="w-3 h-3 text-amber-400" />
                 Talent {query.trim() && `(${filteredResults.talents.length})`}
               </button>
               <button
@@ -449,11 +449,11 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors ${
                   selectedCategory === 'casting'
-                    ? 'bg-rose-600 text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-sm'
                     : 'bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10'
                 }`}
               >
-                <Clapperboard className="w-3 h-3 text-amber-300" />
+                <Clapperboard className="w-3 h-3 text-amber-400" />
                 Casting Calls {query.trim() && `(${filteredResults.castingCalls.length})`}
               </button>
               <button
@@ -464,11 +464,11 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors ${
                   selectedCategory === 'locations'
-                    ? 'bg-rose-600 text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-sm'
                     : 'bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10'
                 }`}
               >
-                <MapPin className="w-3 h-3 text-emerald-300" />
+                <MapPin className="w-3 h-3 text-amber-400" />
                 Locations {query.trim() && `(${filteredResults.locations.length})`}
               </button>
               <button
@@ -479,11 +479,11 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors ${
                   selectedCategory === 'news'
-                    ? 'bg-rose-600 text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-sm'
                     : 'bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10'
                 }`}
               >
-                <Newspaper className="w-3 h-3 text-cyan-300" />
+                <Newspaper className="w-3 h-3 text-yellow-400" />
                 Industry Wire {query.trim() && `(${filteredResults.news.length})`}
               </button>
             </div>
@@ -506,8 +506,8 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
             {!query.trim() ? (
               <div className="p-5 space-y-4">
                 <div>
-                  <h4 className="text-[11px] font-bold text-zinc-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-rose-400" />
+                  <h4 className="text-[11px] font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                     <span>Popular Searches</span>
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -520,7 +520,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                           setSelectedCategory('all');
                           inputRef.current?.focus();
                         }}
-                        className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-rose-600/20 border border-white/10 hover:border-rose-500/40 text-xs text-zinc-300 hover:text-white transition-all text-left flex items-center gap-1.5"
+                        className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-500/40 text-xs text-zinc-300 hover:text-white transition-all text-left flex items-center gap-1.5"
                       >
                         <Search className="w-3 h-3 text-zinc-500" />
                         <span>{item.label}</span>
@@ -529,7 +529,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                <div className="pt-2 border-t border-amber-500/20 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
                   <button
                     type="button"
                     onClick={() => {
@@ -537,7 +537,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                       setIsOpen(false);
                       if (onCloseMobile) onCloseMobile();
                     }}
-                    className="p-3 rounded-xl bg-gradient-to-br from-[#1a1c26] to-[#12141c] border border-white/10 hover:border-rose-500/40 text-left group transition-all"
+                    className="p-3 rounded-xl bg-gradient-to-br from-[#1a1c26] to-[#0d0e14] border border-amber-500/20 hover:border-amber-500/40 text-left group transition-all"
                   >
                     <div className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
                       <Clapperboard className="w-4 h-4" />
@@ -553,9 +553,9 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                       setIsOpen(false);
                       if (onCloseMobile) onCloseMobile();
                     }}
-                    className="p-3 rounded-xl bg-gradient-to-br from-[#1a1c26] to-[#12141c] border border-white/10 hover:border-rose-500/40 text-left group transition-all"
+                    className="p-3 rounded-xl bg-gradient-to-br from-[#1a1c26] to-[#0d0e14] border border-amber-500/20 hover:border-amber-500/40 text-left group transition-all"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-rose-500/20 text-rose-300 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                    <div className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
                       <User className="w-4 h-4" />
                     </div>
                     <div className="font-semibold text-white">Talent Registry</div>
@@ -569,9 +569,9 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                       setIsOpen(false);
                       if (onCloseMobile) onCloseMobile();
                     }}
-                    className="p-3 rounded-xl bg-gradient-to-br from-[#1a1c26] to-[#12141c] border border-white/10 hover:border-rose-500/40 text-left group transition-all"
+                    className="p-3 rounded-xl bg-gradient-to-br from-[#1a1c26] to-[#0d0e14] border border-amber-500/20 hover:border-amber-500/40 text-left group transition-all"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                    <div className="w-7 h-7 rounded-lg bg-yellow-500/20 text-yellow-300 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
                       <MapPin className="w-4 h-4" />
                     </div>
                     <div className="font-semibold text-white">Shooting Locations</div>
@@ -604,7 +604,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                 {/* Segment 1: Talents */}
                 {(selectedCategory === 'all' || selectedCategory === 'talent') && filteredResults.talents.length > 0 && (
                   <div className="space-y-1">
-                    <div className="px-3 py-1 text-[11px] font-bold text-rose-300 uppercase tracking-wider flex items-center justify-between">
+                    <div className="px-3 py-1 text-[11px] font-bold text-amber-300 uppercase tracking-wider flex items-center justify-between">
                       <span className="flex items-center gap-1.5">
                         <User className="w-3.5 h-3.5" />
                         <span>Talent & Artists ({filteredResults.talents.length})</span>
@@ -612,7 +612,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                       {filteredResults.talents.length > 4 && selectedCategory === 'all' && (
                         <button
                           onClick={() => setSelectedCategory('talent')}
-                          className="text-[11px] text-rose-400 hover:text-rose-300 capitalize font-medium flex items-center gap-0.5"
+                          className="text-[11px] text-amber-400 hover:text-amber-300 capitalize font-medium flex items-center gap-0.5"
                         >
                           View all {filteredResults.talents.length}
                           <ChevronRight className="w-3 h-3" />
@@ -629,7 +629,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                             onClick={() => handleSelectItem(item)}
                             className={`group p-2.5 rounded-xl cursor-pointer transition-all flex items-center gap-3 border ${
                               isSelected
-                                ? 'bg-rose-600/15 border-rose-500/40 shadow-sm'
+                                ? 'bg-amber-500/15 border-amber-500/40 shadow-sm'
                                 : 'hover:bg-white/5 border-transparent'
                             }`}
                           >
@@ -640,7 +640,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                             />
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2">
-                                <h4 className="text-xs font-bold text-white truncate group-hover:text-rose-300 transition-colors">
+                                <h4 className="text-xs font-bold text-white truncate group-hover:text-amber-300 transition-colors">
                                   {item.title}
                                 </h4>
                                 {item.secondaryBadge && (
@@ -862,19 +862,19 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
 
           {/* Footer Navigation Bar */}
           {query.trim() && totalCount > 0 && (
-            <div className="p-3 border-t border-white/10 bg-black/50 flex flex-wrap items-center justify-between gap-2 text-xs">
-              <div className="hidden sm:flex items-center gap-3 text-zinc-500 text-[11px]">
+            <div className="p-3 border-t border-amber-500/20 bg-black/70 flex flex-wrap items-center justify-between gap-2 text-xs">
+              <div className="hidden sm:flex items-center gap-3 text-zinc-400 text-[11px]">
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 text-[10px]">↑</kbd>
-                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 text-[10px]">↓</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-amber-300 text-[10px]">↑</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-amber-300 text-[10px]">↓</kbd>
                   to navigate
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 text-[10px]">Enter</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-amber-300 text-[10px]">Enter</kbd>
                   to open
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 text-[10px]">Esc</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-amber-300 text-[10px]">Esc</kbd>
                   to close
                 </span>
               </div>
@@ -883,7 +883,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                 <button
                   type="button"
                   onClick={() => handleViewAll(selectedCategory)}
-                  className="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs flex items-center gap-1.5 shadow"
+                  className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-zinc-950 font-bold text-xs flex items-center gap-1.5 shadow-md shadow-amber-500/20 transition-all"
                 >
                   <span>
                     {selectedCategory === 'all'
@@ -894,7 +894,7 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({
                       ? `See all ${filteredResults.castingCalls.length} in Casting Calls`
                       : `See all in Shooting Locations`}
                   </span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 text-zinc-950" />
                 </button>
               </div>
             </div>

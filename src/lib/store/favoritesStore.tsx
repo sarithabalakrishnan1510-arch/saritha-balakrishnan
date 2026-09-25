@@ -206,10 +206,10 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       {/* Floating Toast Notification */}
       {toast && (
         <div className="fixed bottom-6 right-6 z-50 animate-in fade-in slide-in-from-bottom-3 duration-200 pointer-events-none">
-          <div className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#141620] border border-white/20 text-white text-xs font-semibold shadow-2xl backdrop-blur-md">
+          <div className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-[#141620] border border-amber-500/30 text-white text-xs font-semibold shadow-2xl backdrop-blur-md">
             <span
               className={`w-2.5 h-2.5 rounded-full ${
-                toast.type === 'add' ? 'bg-rose-500 animate-ping' : toast.type === 'remove' ? 'bg-zinc-400' : 'bg-blue-400'
+                toast.type === 'add' ? 'bg-amber-400 animate-ping' : toast.type === 'remove' ? 'bg-zinc-400' : 'bg-blue-400'
               }`}
             />
             <span>{toast.message}</span>

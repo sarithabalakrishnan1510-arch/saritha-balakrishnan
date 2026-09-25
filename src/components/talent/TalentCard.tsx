@@ -38,10 +38,10 @@ export const TalentCard: React.FC<TalentCardProps> = ({
   const skills = talent.skills || [];
 
   return (
-    <div className="rounded-xl bg-[#13151c] border border-white/10 hover:border-rose-500/40 transition-all overflow-hidden shadow-lg flex flex-col justify-between group">
+    <div className="rounded-xl bg-[#0c0d12] border border-amber-500/20 hover:border-amber-400/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.12)] transition-all overflow-hidden shadow-lg flex flex-col justify-between group">
       <div>
         {/* Photo Container with overlays */}
-        <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-900">
+        <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-950">
           <img
             src={
               talent.user?.avatar_url ||
@@ -51,7 +51,7 @@ export const TalentCard: React.FC<TalentCardProps> = ({
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#13151c] via-transparent to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-transparent to-black/40" />
 
           {/* Badges Top Bar */}
           <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2">
@@ -63,8 +63,8 @@ export const TalentCard: React.FC<TalentCardProps> = ({
                 </span>
               )}
               {isChildArtist && (
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/90 text-white backdrop-blur-md shadow-sm">
-                  <UserCheck className="w-3 h-3" />
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-zinc-950 backdrop-blur-md shadow-sm">
+                  <UserCheck className="w-3 h-3 stroke-[2.2]" />
                   Child Artist (Verified Guardian)
                 </span>
               )}
@@ -76,7 +76,7 @@ export const TalentCard: React.FC<TalentCardProps> = ({
                 title={isShortlisted ? 'Remove from Shortlist' : 'Add to Shortlist'}
                 className={`p-2 rounded-full backdrop-blur-md shadow-md transition-colors ${
                   isShortlisted
-                    ? 'bg-rose-600 text-white'
+                    ? 'bg-amber-400 text-zinc-950 font-bold'
                     : 'bg-black/60 text-zinc-300 hover:text-white hover:bg-black/80'
                 }`}
               >
@@ -87,10 +87,10 @@ export const TalentCard: React.FC<TalentCardProps> = ({
 
           {/* Bottom Photo Overlay Info */}
           <div className="absolute bottom-3 left-3 right-3">
-            <span className="inline-block text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-rose-600/90 text-white mb-1 shadow-sm">
+            <span className="inline-block text-[10px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 mb-1 shadow-md">
               {talent.primary_category}
             </span>
-            <h3 className="text-base font-bold text-white leading-tight drop-shadow-md">
+            <h3 className="text-base font-bold text-white leading-tight drop-shadow-md group-hover:text-amber-200 transition-colors">
               {talent.stage_name || talent.user?.full_name}
             </h3>
             {talent.stage_name && talent.user?.full_name && talent.stage_name !== talent.user.full_name && (
@@ -104,9 +104,9 @@ export const TalentCard: React.FC<TalentCardProps> = ({
         {/* Card Body */}
         <div className="p-4 space-y-3 text-xs">
           {/* Age & Location stats */}
-          <div className="flex items-center justify-between text-zinc-300 pt-1 border-b border-white/5 pb-2.5">
+          <div className="flex items-center justify-between text-zinc-300 pt-1 border-b border-amber-500/15 pb-2.5">
             <div className="flex items-center gap-1 text-[11px]">
-              <MapPin className="w-3.5 h-3.5 text-rose-400" />
+              <MapPin className="w-3.5 h-3.5 text-amber-400" />
               <span>{city}, {district}</span>
             </div>
             <span className="text-[11px] font-medium text-zinc-400">
@@ -131,11 +131,11 @@ export const TalentCard: React.FC<TalentCardProps> = ({
           {/* Languages */}
           {languages.length > 0 && (
             <div className="flex items-center gap-1.5 flex-wrap">
-              <Languages className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
+              <Languages className="w-3.5 h-3.5 text-amber-400/70 shrink-0" />
               {languages.slice(0, 3).map(lang => (
                 <span
                   key={lang}
-                  className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-zinc-300"
+                  className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 border border-white/5 text-zinc-300"
                 >
                   {lang}
                 </span>
@@ -149,7 +149,7 @@ export const TalentCard: React.FC<TalentCardProps> = ({
               {skills.slice(0, 3).map(skill => (
                 <span
                   key={skill}
-                  className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300"
+                  className="text-[10px] px-2 py-0.5 rounded-full bg-black/60 border border-amber-500/20 text-amber-200/90"
                 >
                   {skill}
                 </span>
@@ -165,20 +165,20 @@ export const TalentCard: React.FC<TalentCardProps> = ({
       </div>
 
       {/* Action Footer */}
-      <div className="p-4 pt-0 border-t border-white/5 mt-2 flex items-center gap-2">
+      <div className="p-4 pt-0 border-t border-amber-500/15 mt-2 flex items-center gap-2">
         <Link
           to={`/talent/${talent.id}`}
-          className="flex-1 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-white font-medium text-xs text-center transition-colors"
+          className="flex-1 py-2 rounded-lg bg-white/5 hover:bg-amber-500/10 border border-amber-500/25 hover:border-amber-400/50 text-amber-200 hover:text-white font-medium text-xs text-center transition-all shadow-sm"
         >
           View Portfolio
         </Link>
         {isProduction && onInviteAudition && (
           <button
             onClick={() => onInviteAudition(talent)}
-            className="px-3 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-medium text-xs flex items-center gap-1 transition-colors"
+            className="px-3 py-2 rounded-lg bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs flex items-center gap-1 transition-all shadow-sm active:scale-95"
             title="Invite to Audition"
           >
-            <Video className="w-3.5 h-3.5" />
+            <Video className="w-3.5 h-3.5 stroke-[2.2]" />
             <span>Audition</span>
           </button>
         )}

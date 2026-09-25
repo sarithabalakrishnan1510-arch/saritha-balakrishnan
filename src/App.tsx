@@ -6,6 +6,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
+import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { CastingCallsPage } from './pages/CastingCallsPage';
@@ -34,9 +35,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-[#0b0c10] text-[#e5e7eb] font-sans">
+      <div className="min-h-screen flex flex-col bg-[#07080a] text-[#f3f4f6] font-sans selection:bg-amber-500/30 selection:text-amber-200">
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 pb-16 md:pb-0">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/casting" element={<CastingCallsPage />} />
@@ -55,6 +56,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <MobileBottomNav />
       </div>
     </BrowserRouter>
   );

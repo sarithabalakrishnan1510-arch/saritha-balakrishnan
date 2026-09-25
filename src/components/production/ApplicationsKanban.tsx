@@ -25,7 +25,7 @@ const STAGES: { id: ApplicationStatus; title: string; color: string; countColor:
   { id: 'applied', title: 'Applied', color: 'border-blue-500/40 text-blue-400', countColor: 'bg-blue-500/20 text-blue-300' },
   { id: 'viewed', title: 'Reviewed', color: 'border-purple-500/40 text-purple-400', countColor: 'bg-purple-500/20 text-purple-300' },
   { id: 'shortlisted', title: 'Shortlisted', color: 'border-amber-500/40 text-amber-400', countColor: 'bg-amber-500/20 text-amber-300' },
-  { id: 'audition', title: 'Audition', color: 'border-rose-500/40 text-rose-400', countColor: 'bg-rose-500/20 text-rose-300' },
+  { id: 'audition', title: 'Audition', color: 'border-amber-500/40 text-amber-400', countColor: 'bg-amber-500/20 text-amber-300' },
   { id: 'selected', title: 'Selected', color: 'border-emerald-500/40 text-emerald-400', countColor: 'bg-emerald-500/20 text-emerald-300' },
   { id: 'rejected', title: 'Archived', color: 'border-zinc-600 text-zinc-400', countColor: 'bg-zinc-800 text-zinc-400' },
 ];
@@ -60,14 +60,14 @@ export const ApplicationsKanban: React.FC<ApplicationsKanbanProps> = ({
   return (
     <div className="space-y-4">
       {/* Top Filter Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-xl bg-black/40 border border-white/10 text-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-xl bg-black/60 border border-amber-500/20 text-xs">
         <div className="flex items-center gap-2">
-          <Filter className="w-4 h-4 text-rose-400" />
+          <Filter className="w-4 h-4 text-amber-400" />
           <span className="font-semibold text-white">Filter Pipeline by Role:</span>
           <select
             value={selectedRoleFilter}
             onChange={e => setSelectedRoleFilter(e.target.value)}
-            className="rounded-lg bg-zinc-900 border border-white/15 px-3 py-1.5 text-xs text-white focus:outline-none focus:border-rose-500"
+            className="rounded-lg bg-zinc-900 border border-amber-500/30 px-3 py-1.5 text-xs text-white focus:outline-none focus:border-amber-400"
           >
             <option value="all">All Roles ({applications.length} Candidates)</option>
             {relevantRoles.map(r => (
@@ -91,12 +91,12 @@ export const ApplicationsKanban: React.FC<ApplicationsKanbanProps> = ({
           return (
             <div
               key={stage.id}
-              className="flex flex-col rounded-xl bg-[#111319] border border-white/10 p-3 min-w-[240px] max-h-[750px]"
+              className="flex flex-col rounded-xl bg-[#0d0e14] border border-amber-500/20 p-3 min-w-[240px] max-h-[750px]"
             >
               {/* Stage Header */}
-              <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-white/10">
+              <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-amber-500/15">
                 <div className="flex items-center gap-1.5">
-                  <span className={`w-2 h-2 rounded-full ${stage.id === 'selected' ? 'bg-emerald-400' : stage.id === 'audition' ? 'bg-rose-400' : 'bg-zinc-400'}`} />
+                  <span className={`w-2 h-2 rounded-full ${stage.id === 'selected' ? 'bg-emerald-400' : stage.id === 'audition' ? 'bg-amber-400' : 'bg-zinc-400'}`} />
                   <span className="text-xs font-bold text-white uppercase tracking-wider">
                     {stage.title}
                   </span>
@@ -120,7 +120,7 @@ export const ApplicationsKanban: React.FC<ApplicationsKanbanProps> = ({
                     return (
                       <div
                         key={app.id}
-                        className="rounded-lg bg-black/60 border border-white/10 p-3 hover:border-rose-500/40 transition-all space-y-2 text-xs shadow"
+                        className="rounded-lg bg-black/60 border border-white/10 p-3 hover:border-amber-500/40 transition-all space-y-2 text-xs shadow"
                       >
                         {/* Candidate Basic Info */}
                         <div className="flex items-start gap-2.5">
@@ -136,7 +136,7 @@ export const ApplicationsKanban: React.FC<ApplicationsKanbanProps> = ({
                             <h4 className="font-bold text-white truncate">
                               {talent?.stage_name || talent?.user?.full_name}
                             </h4>
-                            <span className="text-[10px] text-rose-300 block truncate font-medium">
+                            <span className="text-[10px] text-amber-400 block truncate font-medium">
                               Role: {role?.role_name}
                             </span>
                             <span className="text-[10px] text-zinc-400">
@@ -206,7 +206,7 @@ export const ApplicationsKanban: React.FC<ApplicationsKanbanProps> = ({
                             {onOpenAuditionModal && (
                               <button
                                 onClick={() => onOpenAuditionModal(app.talent_user_id, app.casting_role_id)}
-                                className="px-2 py-0.5 rounded bg-rose-600 hover:bg-rose-500 text-white text-[10px] font-semibold"
+                                className="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 text-[10px] font-bold shadow-sm transition-all"
                               >
                                 Invite Audition
                               </button>

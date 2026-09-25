@@ -123,9 +123,9 @@ export const CastingCallsPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-500/20 pb-6">
         <div>
-          <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider block mb-1">
+          <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-1">
             Mollywood Audition Board
           </span>
           <h1 className="text-3xl font-extrabold text-white font-cinematic tracking-tight">
@@ -139,7 +139,7 @@ export const CastingCallsPage: React.FC = () => {
         {currentUser?.role === 'production' && (
           <Link
             to="/production/casting/new"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-md transition-all shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 text-xs font-bold shadow-lg shadow-amber-500/20 transition-all shrink-0 active:scale-95"
           >
             <PlusCircle className="w-4 h-4" />
             <span>Post Casting Call</span>
@@ -149,9 +149,9 @@ export const CastingCallsPage: React.FC = () => {
 
       {/* Talent Match Intelligence Banner if talent user */}
       {currentTalent && (
-        <div className="p-4 rounded-xl bg-gradient-to-r from-rose-950/40 via-black to-zinc-900 border border-rose-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+        <div className="p-4 rounded-xl bg-gradient-to-r from-amber-950/30 via-black to-[#0d0e14] border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs shadow-lg">
           <div className="flex items-center gap-2.5">
-            <Sparkles className="w-5 h-5 text-rose-400 shrink-0" />
+            <Sparkles className="w-5 h-5 text-amber-400 shrink-0" />
             <div>
               <span className="font-bold text-white block">
                 Smart Match Engine Active ({currentTalent.stage_name || currentTalent.user?.full_name})
@@ -164,9 +164,9 @@ export const CastingCallsPage: React.FC = () => {
           <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={() => setMatchThreshold(matchThreshold === 70 ? 0 : 70)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
                 matchThreshold === 70
-                  ? 'bg-rose-600 text-white border-rose-500'
+                  ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-zinc-950 border-amber-400 shadow-md shadow-amber-500/20'
                   : 'bg-white/5 text-zinc-300 border-white/10 hover:bg-white/10'
               }`}
             >
@@ -177,17 +177,17 @@ export const CastingCallsPage: React.FC = () => {
       )}
 
       {/* Filter and Search Controls Bar */}
-      <div className="p-5 rounded-2xl bg-[#111319] border border-white/10 space-y-4">
+      <div className="p-5 rounded-2xl bg-[#0c0d12] border border-amber-500/20 space-y-4 shadow-xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {/* Keyword Search */}
           <div className="relative">
-            <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-3" />
+            <Search className="w-4 h-4 text-amber-400/70 absolute left-3 top-3" />
             <input
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search title, role or banner..."
-              className="w-full bg-black/50 border border-white/10 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-rose-500"
+              className="w-full bg-black/60 border border-amber-500/25 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400/70"
             />
           </div>
 
@@ -196,7 +196,7 @@ export const CastingCallsPage: React.FC = () => {
             <select
               value={districtFilter}
               onChange={e => setDistrictFilter(e.target.value)}
-              className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+              className="w-full bg-black/60 border border-amber-500/25 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400/70"
             >
               <option value="all">All Districts (Kerala)</option>
               {KERALA_DISTRICTS.map(d => (
@@ -210,7 +210,7 @@ export const CastingCallsPage: React.FC = () => {
             <select
               value={genderFilter}
               onChange={e => setGenderFilter(e.target.value)}
-              className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+              className="w-full bg-black/60 border border-amber-500/25 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400/70"
             >
               <option value="all">Gender Requirement: Any</option>
               <option value="male">Male</option>
@@ -226,26 +226,26 @@ export const CastingCallsPage: React.FC = () => {
                 type="checkbox"
                 checked={paidOnly}
                 onChange={e => setPaidOnly(e.target.checked)}
-                className="rounded border-white/20 bg-zinc-800 text-rose-600 focus:ring-0"
+                className="rounded border-amber-500/30 bg-zinc-800 text-amber-500 focus:ring-0"
               />
               <span>Paid Only</span>
             </label>
 
-            <label className="flex items-center gap-1.5 text-xs text-rose-400 font-medium cursor-pointer">
+            <label className="flex items-center gap-1.5 text-xs text-amber-300 font-semibold cursor-pointer">
               <input
                 type="checkbox"
                 checked={savedOnly}
                 onChange={e => setSavedOnly(e.target.checked)}
-                className="rounded border-rose-500/30 bg-zinc-800 text-rose-600 focus:ring-0"
+                className="rounded border-amber-500/40 bg-zinc-800 text-amber-500 focus:ring-0"
               />
-              <Heart className={`w-3.5 h-3.5 ${savedOnly ? 'fill-rose-500 text-rose-500' : ''}`} />
+              <Heart className={`w-3.5 h-3.5 ${savedOnly ? 'fill-amber-400 text-amber-400' : 'text-amber-400'}`} />
               <span>Saved ({savedCastingIds.length})</span>
             </label>
 
             <button
               onClick={handleResetFilters}
               title="Reset Filters"
-              className="ml-auto text-xs text-zinc-400 hover:text-white flex items-center gap-1 p-1.5 hover:bg-white/5 rounded-lg"
+              className="ml-auto text-xs text-zinc-400 hover:text-amber-300 flex items-center gap-1 p-1.5 hover:bg-white/5 rounded-lg transition-colors"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>Reset</span>
@@ -258,19 +258,19 @@ export const CastingCallsPage: React.FC = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between text-xs text-zinc-400">
           <span>Showing {filteredCalls.length} casting notices</span>
-          <span>Zero audition charges guaranteed</span>
+          <span className="text-amber-400/90 font-medium">Zero audition charges guaranteed</span>
         </div>
 
         {filteredCalls.length === 0 ? (
-          <div className="text-center py-16 p-8 rounded-2xl bg-black/30 border border-white/5 space-y-3">
-            <Building2 className="w-12 h-12 text-zinc-600 mx-auto" />
+          <div className="text-center py-16 p-8 rounded-2xl bg-[#0c0d12] border border-amber-500/20 space-y-3">
+            <Building2 className="w-12 h-12 text-amber-500/30 mx-auto" />
             <h3 className="text-lg font-bold text-white">No casting calls match these criteria</h3>
             <p className="text-xs text-zinc-400 max-w-sm mx-auto">
               Try adjusting your district, gender, or match filters to discover more open auditions.
             </p>
             <button
               onClick={handleResetFilters}
-              className="px-4 py-2 rounded-lg bg-rose-600 text-white text-xs font-semibold"
+              className="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 text-xs font-bold shadow-md"
             >
               Clear Filters
             </button>

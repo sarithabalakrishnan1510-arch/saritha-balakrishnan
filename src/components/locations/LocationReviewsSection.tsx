@@ -231,14 +231,14 @@ export const LocationReviewsSection: React.FC<LocationReviewsSectionProps> = ({ 
             <div className="space-y-1">
               <div className="flex items-center justify-between text-zinc-300">
                 <span className="flex items-center gap-1.5">
-                  <Users2 className="w-3.5 h-3.5 text-rose-400" />
+                  <Users2 className="w-3.5 h-3.5 text-amber-400" />
                   <span>Panchayat & Caretaker Liaison</span>
                 </span>
                 <span className="font-bold text-white">{summary.subRatings.cooperation}</span>
               </div>
               <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
                 <div 
-                  className="h-full bg-rose-400 rounded-full transition-all duration-500" 
+                  className="h-full bg-amber-400 rounded-full transition-all duration-500" 
                   style={{ width: `${(summary.subRatings.cooperation / 5) * 100}%` }}
                 />
               </div>
@@ -364,7 +364,7 @@ export const LocationReviewsSection: React.FC<LocationReviewsSectionProps> = ({ 
                   setSelectedStarFilter('all');
                   setSelectedRoleFilter('all');
                 }}
-                className="text-[11px] text-rose-400 hover:underline font-medium"
+                className="text-[11px] text-amber-400 hover:underline font-medium"
               >
                 Reset
               </button>
@@ -401,7 +401,7 @@ export const LocationReviewsSection: React.FC<LocationReviewsSectionProps> = ({ 
               {/* Author & Header */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-600/30 to-rose-600/30 border border-white/15 flex items-center justify-center font-bold text-amber-300 shrink-0 text-sm">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-600/30 to-yellow-600/30 border border-amber-500/30 flex items-center justify-center font-bold text-amber-300 shrink-0 text-sm">
                     {review.author_name.charAt(0)}
                   </div>
                   <div>
@@ -492,14 +492,14 @@ export const LocationReviewsSection: React.FC<LocationReviewsSectionProps> = ({ 
 
                   {review.cons && review.cons.length > 0 && (
                     <div className="space-y-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-rose-400 block">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block">
                         Logistics Caution
                       </span>
                       <div className="flex flex-wrap gap-1">
                         {review.cons.map((c, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-0.5 rounded-md bg-rose-950/60 text-rose-300 border border-rose-500/30 text-[11px] font-medium"
+                            className="px-2 py-0.5 rounded-md bg-amber-950/60 text-amber-300 border border-amber-500/30 text-[11px] font-medium"
                           >
                             ⚠ {c}
                           </span>
@@ -531,7 +531,7 @@ export const LocationReviewsSection: React.FC<LocationReviewsSectionProps> = ({ 
                   </div>
                   <div>
                     <span className="text-zinc-400 block text-[10px]">Caretaker Support</span>
-                    <span className="font-bold text-rose-400">★ {review.caretaker_cooperation_rating}.0</span>
+                    <span className="font-bold text-amber-400">★ {review.caretaker_cooperation_rating}.0</span>
                   </div>
                 </div>
               )}

@@ -70,23 +70,23 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="space-y-16 pb-20">
-      {/* Cinematic Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#10121a] via-[#0d0e14] to-[#090a0d] pt-12 pb-20 border-b border-white/10">
-        {/* Background ambient lighting */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-rose-600/10 blur-[120px] pointer-events-none" />
+      {/* Cinematic Hero Section in Black and Gold */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0c0d12] via-[#090a0e] to-[#07080a] pt-12 pb-20 border-b border-amber-500/20">
+        {/* Background ambient gold lighting */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-amber-500/10 blur-[130px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-5">
             {/* Pill tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-semibold backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5 text-rose-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold backdrop-blur-sm shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               <span>Official Mollywood Casting & Production Network</span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white font-cinematic tracking-tight leading-tight">
               Talent. Casting. Crew. <br />
-              <span className="bg-gradient-to-r from-rose-400 via-amber-200 to-rose-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-[0_2px_15px_rgba(245,158,11,0.25)]">
                 One Malayalam Cinema Network.
               </span>
             </h1>
@@ -99,23 +99,23 @@ export const HomePage: React.FC = () => {
             {/* Unified Search Box */}
             <form
               onSubmit={handleSearchSubmit}
-              className="mt-8 max-w-2xl mx-auto p-2 rounded-2xl bg-black/60 border border-white/15 backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-center gap-2"
+              className="mt-8 max-w-2xl mx-auto p-2 rounded-2xl bg-black/80 border border-amber-500/30 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.8)] flex flex-col sm:flex-row items-center gap-2"
             >
-              <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-xl border border-white/10 w-full sm:w-auto">
+              <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-xl border border-amber-500/20 w-full sm:w-auto">
                 <select
                   value={searchType}
                   onChange={e => setSearchType(e.target.value as any)}
-                  className="bg-transparent text-xs text-white focus:outline-none py-1.5"
+                  className="bg-transparent text-xs text-amber-200 focus:outline-none py-1.5"
                 >
-                  <option value="all" className="bg-zinc-900">All Categories</option>
-                  <option value="casting" className="bg-zinc-900">Casting Calls</option>
-                  <option value="talent" className="bg-zinc-900">Actors / Registry</option>
-                  <option value="vendors" className="bg-zinc-900">Crew & Vendors</option>
+                  <option value="all" className="bg-zinc-900 text-white">All Categories</option>
+                  <option value="casting" className="bg-zinc-900 text-white">Casting Calls</option>
+                  <option value="talent" className="bg-zinc-900 text-white">Actors / Registry</option>
+                  <option value="vendors" className="bg-zinc-900 text-white">Crew & Vendors</option>
                 </select>
               </div>
 
               <div className="relative flex-1 w-full">
-                <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-3" />
+                <Search className="w-4 h-4 text-amber-400/80 absolute left-3 top-3" />
                 <input
                   type="text"
                   value={searchQuery}
@@ -127,29 +127,29 @@ export const HomePage: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs sm:text-sm transition-all shadow-lg flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 active:scale-95"
               >
                 <span>Search</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 stroke-[2.2]" />
               </button>
             </form>
 
             {/* Quick Filter Tags */}
             <div className="flex flex-wrap items-center justify-center gap-2 pt-3 text-xs text-zinc-400">
               <span className="text-zinc-500">Popular:</span>
-              <Link to="/casting?category=lead" className="hover:text-rose-300 underline">
+              <Link to="/casting?category=lead" className="hover:text-amber-300 underline">
                 Lead Actors
               </Link>
               <span>•</span>
-              <Link to="/talent?category=child_artist" className="hover:text-rose-300 underline text-amber-300">
+              <Link to="/talent?category=child_artist" className="hover:text-amber-300 underline text-amber-400">
                 Child Artists (Guardian Consent)
               </Link>
               <span>•</span>
-              <Link to="/casting?district=Ernakulam" className="hover:text-rose-300 underline">
+              <Link to="/casting?district=Ernakulam" className="hover:text-amber-300 underline">
                 Kochi Shoots
               </Link>
               <span>•</span>
-              <Link to="/services?category=camera_rental" className="hover:text-rose-300 underline">
+              <Link to="/services?category=camera_rental" className="hover:text-amber-300 underline">
                 Alexa 35 Rentals
               </Link>
             </div>
@@ -158,21 +158,21 @@ export const HomePage: React.FC = () => {
 
         {/* Metrics Strip */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-black/60 border border-amber-500/20 backdrop-blur-md shadow-lg">
             <div className="text-center space-y-1">
-              <span className="text-2xl sm:text-3xl font-extrabold text-white font-cinematic">100%</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-gold-gradient font-cinematic">100%</span>
               <p className="text-xs text-zinc-400">Zero Audition Fees</p>
             </div>
-            <div className="text-center space-y-1 border-l border-white/10">
-              <span className="text-2xl sm:text-3xl font-extrabold text-white font-cinematic">14</span>
+            <div className="text-center space-y-1 border-l border-amber-500/20">
+              <span className="text-2xl sm:text-3xl font-extrabold text-gold-gradient font-cinematic">14</span>
               <p className="text-xs text-zinc-400">Kerala Districts Covered</p>
             </div>
-            <div className="text-center space-y-1 border-l border-white/10">
-              <span className="text-2xl sm:text-3xl font-extrabold text-white font-cinematic">12,500+</span>
+            <div className="text-center space-y-1 border-l border-amber-500/20">
+              <span className="text-2xl sm:text-3xl font-extrabold text-gold-gradient font-cinematic">12,500+</span>
               <p className="text-xs text-zinc-400">Registered Talent Profiles</p>
             </div>
-            <div className="text-center space-y-1 border-l border-white/10">
-              <span className="text-2xl sm:text-3xl font-extrabold text-white font-cinematic">350+</span>
+            <div className="text-center space-y-1 border-l border-amber-500/20">
+              <span className="text-2xl sm:text-3xl font-extrabold text-gold-gradient font-cinematic">350+</span>
               <p className="text-xs text-zinc-400">Verified Productions</p>
             </div>
           </div>
@@ -183,12 +183,12 @@ export const HomePage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Talent Card */}
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-[#161822] to-[#101117] border border-rose-500/20 hover:border-rose-500/50 transition-all flex flex-col justify-between group">
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-[#12131a] to-[#0a0a0f] border border-amber-500/20 hover:border-amber-400/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.12)] transition-all flex flex-col justify-between group">
             <div className="space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center border border-rose-500/30">
-                <Users className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center border border-amber-500/30">
+                <Users className="w-6 h-6 stroke-[2]" />
               </div>
-              <h3 className="text-xl font-bold text-white font-cinematic">For Actors & Artists</h3>
+              <h3 className="text-xl font-bold text-white font-cinematic group-hover:text-amber-200 transition-colors">For Actors & Artists</h3>
               <p className="text-xs text-zinc-300 leading-relaxed">
                 Build your verified digital portfolio with headshots, showreels, and dialect capabilities. Get matched with roles based on playing age and Malayalam accents.
               </p>
@@ -196,7 +196,7 @@ export const HomePage: React.FC = () => {
             <div className="pt-6">
               <Link
                 to="/talent/dashboard"
-                className="inline-flex items-center gap-2 text-xs font-semibold text-rose-400 group-hover:text-rose-300"
+                className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:text-amber-300"
               >
                 <span>Launch Talent Hub</span>
                 <ChevronRight className="w-4 h-4" />
@@ -205,12 +205,12 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Production Houses Card */}
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-[#161822] to-[#101117] border border-amber-500/20 hover:border-amber-500/50 transition-all flex flex-col justify-between group">
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-[#151620] to-[#0c0d12] border border-amber-500/30 hover:border-amber-400/60 hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] transition-all flex flex-col justify-between group">
             <div className="space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30">
-                <Building2 className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center border border-amber-500/40">
+                <Building2 className="w-6 h-6 stroke-[2]" />
               </div>
-              <h3 className="text-xl font-bold text-white font-cinematic">For Production Houses</h3>
+              <h3 className="text-xl font-bold text-white font-cinematic group-hover:text-amber-200 transition-colors">For Production Houses</h3>
               <p className="text-xs text-zinc-300 leading-relaxed">
                 Post casting calls, filter through verified talent using multi-parameter matching, manage applicant pipelines in a Kanban board, and invite for screen tests.
               </p>
@@ -218,7 +218,7 @@ export const HomePage: React.FC = () => {
             <div className="pt-6">
               <Link
                 to="/production/dashboard"
-                className="inline-flex items-center gap-2 text-xs font-semibold text-amber-400 group-hover:text-amber-300"
+                className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:text-amber-300"
               >
                 <span>Production Pipeline</span>
                 <ChevronRight className="w-4 h-4" />
@@ -227,12 +227,12 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Vendors & Locations Card */}
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-[#161822] to-[#101117] border border-emerald-500/20 hover:border-emerald-500/50 transition-all flex flex-col justify-between group">
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-[#12131a] to-[#0a0a0f] border border-amber-500/20 hover:border-amber-400/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.12)] transition-all flex flex-col justify-between group">
             <div className="space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
-                <Camera className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center border border-amber-500/30">
+                <Camera className="w-6 h-6 stroke-[2]" />
               </div>
-              <h3 className="text-xl font-bold text-white font-cinematic">Crew, Gear & Locations</h3>
+              <h3 className="text-xl font-bold text-white font-cinematic group-hover:text-amber-200 transition-colors">Crew, Gear & Locations</h3>
               <p className="text-xs text-zinc-300 leading-relaxed">
                 Connect with cinema camera rentals, sound units, vanity vans, stunt guilds, and authentic Kerala heritage houses, tea plantations, and backwater villas.
               </p>
@@ -240,7 +240,7 @@ export const HomePage: React.FC = () => {
             <div className="pt-6">
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 group-hover:text-emerald-300"
+                className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 group-hover:text-amber-300"
               >
                 <span>Browse Directory</span>
                 <ChevronRight className="w-4 h-4" />
@@ -254,7 +254,7 @@ export const HomePage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider block mb-1">
+            <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">
               Active Productions
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-white font-cinematic tracking-tight">
@@ -267,7 +267,7 @@ export const HomePage: React.FC = () => {
 
           <Link
             to="/casting"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-amber-500/25 text-amber-200 hover:text-white text-xs font-semibold transition-all shadow-sm"
           >
             <span>View All Casting Calls ({castingCalls.length})</span>
             <ArrowRight className="w-4 h-4" />
@@ -289,7 +289,7 @@ export const HomePage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider block mb-1">
+            <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">
               Verified Mollywood Registry
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-white font-cinematic tracking-tight">
@@ -302,7 +302,7 @@ export const HomePage: React.FC = () => {
 
           <Link
             to="/talent"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-amber-500/25 text-amber-200 hover:text-white text-xs font-semibold transition-all shadow-sm"
           >
             <span>Explore All Talents ({talents.length})</span>
             <ArrowRight className="w-4 h-4" />
@@ -321,10 +321,10 @@ export const HomePage: React.FC = () => {
 
       {/* Production Services & Shooting Locations Highlight Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 rounded-3xl bg-gradient-to-b from-[#14161f] to-[#0d0e13] border border-white/10 space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+        <div className="p-8 rounded-3xl bg-gradient-to-b from-[#111219] to-[#0a0b10] border border-amber-500/20 space-y-8 shadow-xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-500/15 pb-6">
             <div>
-              <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">
                 Logistics & Infrastructure
               </span>
               <h2 className="text-2xl font-bold text-white font-cinematic tracking-tight">
@@ -334,13 +334,13 @@ export const HomePage: React.FC = () => {
             <div className="flex items-center gap-3">
               <Link
                 to="/services"
-                className="text-xs text-rose-400 hover:text-rose-300 font-semibold"
+                className="text-xs text-amber-400 hover:text-amber-300 font-semibold"
               >
                 All 20 Services →
               </Link>
               <Link
                 to="/locations"
-                className="text-xs text-emerald-400 hover:text-emerald-300 font-semibold"
+                className="text-xs text-amber-400 hover:text-amber-300 font-semibold"
               >
                 All 10 Locations →
               </Link>
@@ -352,15 +352,15 @@ export const HomePage: React.FC = () => {
             {vendors.slice(0, 3).map(vend => (
               <div
                 key={vend.id}
-                className="rounded-xl bg-black/40 border border-white/10 p-4 hover:border-emerald-500/40 transition-all flex flex-col justify-between space-y-3"
+                className="rounded-xl bg-black/50 border border-amber-500/20 p-4 hover:border-amber-400/40 hover:shadow-[0_0_15px_rgba(245,158,11,0.1)] transition-all flex flex-col justify-between space-y-3"
               >
                 <div>
                   <img
                     src={vend.image_url}
                     alt={vend.business_name}
-                    className="w-full h-36 object-cover rounded-lg mb-3"
+                    className="w-full h-36 object-cover rounded-lg mb-3 ring-1 ring-amber-500/20"
                   />
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 font-semibold uppercase">
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30 font-semibold uppercase">
                     {vend.category_name}
                   </span>
                   <h4 className="text-sm font-bold text-white mt-1">{vend.business_name}</h4>
@@ -370,7 +370,7 @@ export const HomePage: React.FC = () => {
                   <span className="text-zinc-300 font-medium">{vend.district}</span>
                   <Link
                     to="/services"
-                    className="text-emerald-400 hover:text-emerald-300 font-semibold"
+                    className="text-amber-400 hover:text-amber-300 font-semibold"
                   >
                     View Details
                   </Link>
@@ -383,10 +383,10 @@ export const HomePage: React.FC = () => {
 
       {/* Safety & Anti-Fraud Guarantee Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 rounded-3xl bg-rose-950/20 border border-rose-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-[#14120a] via-[#1a170d] to-[#0e0c08] border border-amber-500/30 shadow-[0_4px_30px_rgba(245,158,11,0.1)] flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="flex items-center gap-2 text-rose-400 font-bold text-sm">
-              <ShieldCheck className="w-5 h-5 text-emerald-400" />
+            <div className="flex items-center gap-2 text-amber-400 font-bold text-sm tracking-wide">
+              <ShieldCheck className="w-5 h-5 text-amber-400" />
               <span>KERALA FILM CHAMBER SAFETY CHARTER</span>
             </div>
             <h3 className="text-2xl font-bold text-white font-cinematic">
@@ -400,13 +400,13 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <Link
               to="/safety"
-              className="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs transition-colors shadow-md text-center"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs transition-all shadow-md shadow-amber-500/20 text-center active:scale-95"
             >
               Read Safety Protocol
             </Link>
             <Link
               to="/safety#report"
-              className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs transition-colors text-center"
+              className="px-5 py-2.5 rounded-xl bg-black/40 hover:bg-amber-500/10 text-amber-200 border border-amber-500/30 font-semibold text-xs transition-colors text-center"
             >
               Report Fraudulent Call
             </Link>

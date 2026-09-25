@@ -208,10 +208,10 @@ export const LocationReviewsProvider: React.FC<{ children: React.ReactNode }> = 
       {/* Toast Notification */}
       {toast && (
         <div 
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl bg-zinc-900/95 text-white border border-white/15 shadow-2xl backdrop-blur-md animate-in slide-in-from-bottom-5 duration-300"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl bg-zinc-900/95 text-white border border-amber-500/30 shadow-2xl backdrop-blur-md animate-in slide-in-from-bottom-5 duration-300"
           role="alert"
         >
-          <div className={`w-2.5 h-2.5 rounded-full ${toast.type === 'success' ? 'bg-emerald-400' : toast.type === 'error' ? 'bg-rose-400' : 'bg-amber-400'}`} />
+          <div className={`w-2.5 h-2.5 rounded-full ${toast.type === 'success' ? 'bg-emerald-400' : toast.type === 'error' ? 'bg-red-500' : 'bg-amber-400'}`} />
           <p className="text-xs font-medium text-zinc-200">{toast.message}</p>
           <button
             onClick={dismissToast}

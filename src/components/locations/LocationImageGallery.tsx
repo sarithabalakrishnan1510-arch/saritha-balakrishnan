@@ -249,7 +249,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
               </span>
             )}
             {district && (
-              <span className="hidden sm:inline-block px-2.5 py-1 rounded-lg text-xs font-semibold bg-rose-950/60 text-rose-300 backdrop-blur-md border border-rose-500/30">
+              <span className="hidden sm:inline-block px-2.5 py-1 rounded-lg text-xs font-semibold bg-amber-950/60 text-amber-300 backdrop-blur-md border border-amber-500/30">
                 {district} District
               </span>
             )}
@@ -257,8 +257,8 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
 
           <div className="flex items-center gap-2">
             {/* Image Counter Badge */}
-            <div className="px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/15 text-xs font-medium text-zinc-300 flex items-center gap-1.5 shadow-sm">
-              <Camera className="w-3.5 h-3.5 text-rose-400" />
+            <div className="px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-amber-500/20 text-xs font-medium text-zinc-300 flex items-center gap-1.5 shadow-sm">
+              <Camera className="w-3.5 h-3.5 text-amber-400" />
               <span>
                 <strong className="text-white">{currentIndex + 1}</strong> / {safeImages.length}
               </span>
@@ -287,7 +287,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
               e.stopPropagation();
               paginate(-1);
             }}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 rounded-full bg-black/60 hover:bg-rose-600 text-white backdrop-blur-md border border-white/20 hover:border-rose-500 transition-all duration-200 active:scale-90 shadow-xl opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 rounded-full bg-black/60 hover:bg-gradient-to-r hover:from-amber-400 hover:to-yellow-500 hover:text-zinc-950 text-white backdrop-blur-md border border-white/20 hover:border-amber-300 transition-all duration-200 active:scale-90 shadow-xl opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
             aria-label="Previous photo"
             title="Previous photo (Arrow Left)"
           >
@@ -304,7 +304,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
               e.stopPropagation();
               paginate(1);
             }}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 rounded-full bg-black/60 hover:bg-rose-600 text-white backdrop-blur-md border border-white/20 hover:border-rose-500 transition-all duration-200 active:scale-90 shadow-xl opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 rounded-full bg-black/60 hover:bg-gradient-to-r hover:from-amber-400 hover:to-yellow-500 hover:text-zinc-950 text-white backdrop-blur-md border border-white/20 hover:border-amber-300 transition-all duration-200 active:scale-90 shadow-xl opacity-90 sm:opacity-0 sm:group-hover:opacity-100"
             aria-label="Next photo"
             title="Next photo (Arrow Right)"
           >
@@ -321,7 +321,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
             <p className="text-[11px] sm:text-xs text-zinc-300 flex items-center gap-1.5 mt-0.5">
               <span>High-Resolution Production Photo</span>
               <span>•</span>
-              <span className="text-rose-300 font-medium">Shot {currentIndex + 1} of {safeImages.length}</span>
+              <span className="text-amber-400 font-medium">Shot {currentIndex + 1} of {safeImages.length}</span>
             </p>
           </div>
 
@@ -334,7 +334,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
                 onClick={() => selectIndex(idx)}
                 className={`transition-all duration-300 rounded-full ${
                   idx === currentIndex 
-                    ? 'w-5 h-2 bg-rose-500 shadow-sm' 
+                    ? 'w-5 h-2 bg-gradient-to-r from-amber-400 to-yellow-500 shadow-sm' 
                     : 'w-2 h-2 bg-white/40 hover:bg-white/80'
                 }`}
                 aria-label={`Jump to photo ${idx + 1}`}
@@ -353,8 +353,8 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
               exit={{ opacity: 0, y: -10 }}
               className="absolute inset-x-0 bottom-16 flex justify-center pointer-events-none z-20 sm:hidden"
             >
-              <div className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[11px] text-zinc-200 flex items-center gap-1.5 shadow-lg">
-                <Sparkles className="w-3 h-3 text-rose-400 animate-pulse" />
+              <div className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-500/30 text-[11px] text-zinc-200 flex items-center gap-1.5 shadow-lg">
+                <Sparkles className="w-3 h-3 text-amber-400 animate-pulse" />
                 <span>Swipe left / right to browse</span>
               </div>
             </motion.div>
@@ -378,7 +378,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
                 onClick={() => selectIndex(idx)}
                 className={`relative flex-shrink-0 w-16 h-12 sm:w-20 sm:h-14 rounded-xl overflow-hidden transition-all duration-200 border-2 ${
                   idx === currentIndex
-                    ? 'border-rose-500 ring-2 ring-rose-500/40 scale-105 shadow-md shadow-rose-950/50'
+                    ? 'border-amber-400 ring-2 ring-amber-400/40 scale-105 shadow-md shadow-amber-950/50'
                     : 'border-white/10 hover:border-white/40 opacity-70 hover:opacity-100 scale-100'
                 }`}
                 aria-label={`Select photo ${idx + 1}`}
@@ -390,7 +390,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
                   className="w-full h-full object-cover"
                 />
                 {idx === currentIndex && (
-                  <div className="absolute inset-0 bg-rose-500/10" />
+                  <div className="absolute inset-0 bg-amber-400/10" />
                 )}
                 <span className="absolute bottom-0.5 right-1 text-[9px] font-bold text-white bg-black/70 px-1 rounded">
                   {idx + 1}
@@ -444,7 +444,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
                     setIsFullscreen(false);
                     setIsZoomed(false);
                   }}
-                  className="p-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white transition-colors shadow-md"
+                  className="p-2 rounded-xl bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-white border border-white/10 hover:border-amber-400 transition-all shadow-md"
                   title="Close Fullscreen (Esc)"
                   aria-label="Close Fullscreen"
                 >
@@ -488,7 +488,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
                     e.stopPropagation();
                     paginate(-1);
                   }}
-                  className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-full bg-black/60 hover:bg-rose-600 text-white backdrop-blur-md border border-white/20 transition-all active:scale-95 shadow-2xl z-40"
+                  className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-full bg-black/70 hover:bg-gradient-to-r hover:from-amber-400 hover:to-yellow-500 hover:text-zinc-950 text-white backdrop-blur-md border border-white/20 hover:border-amber-300 transition-all active:scale-95 shadow-2xl z-40"
                   aria-label="Previous High-Res Photo"
                 >
                   <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -503,7 +503,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
                     e.stopPropagation();
                     paginate(1);
                   }}
-                  className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-full bg-black/60 hover:bg-rose-600 text-white backdrop-blur-md border border-white/20 transition-all active:scale-95 shadow-2xl z-40"
+                  className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-full bg-black/70 hover:bg-gradient-to-r hover:from-amber-400 hover:to-yellow-500 hover:text-zinc-950 text-white backdrop-blur-md border border-white/20 hover:border-amber-300 transition-all active:scale-95 shadow-2xl z-40"
                   aria-label="Next High-Res Photo"
                 >
                   <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -520,7 +520,7 @@ export const LocationImageGallery: React.FC<LocationImageGalleryProps> = ({
                   onClick={() => selectIndex(idx)}
                   className={`w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden transition-all duration-200 border-2 ${
                     idx === currentIndex
-                      ? 'border-rose-500 ring-2 ring-rose-500/40 scale-105'
+                      ? 'border-amber-400 ring-2 ring-amber-400/40 scale-105 shadow-md shadow-amber-950/50'
                       : 'border-white/20 opacity-60 hover:opacity-100'
                   }`}
                 >

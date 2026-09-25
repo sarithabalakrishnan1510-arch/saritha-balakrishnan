@@ -123,7 +123,7 @@ export const ProductionDashboardPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       {/* Production Top Bar */}
-      <div className="rounded-2xl bg-gradient-to-r from-[#171520] via-zinc-900 to-black border border-amber-500/20 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xl">
+      <div className="rounded-2xl bg-gradient-to-r from-amber-950/30 via-[#0d0e14] to-black border border-amber-500/30 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-2xl">
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
@@ -142,7 +142,7 @@ export const ProductionDashboardPage: React.FC = () => {
         <div className="flex flex-wrap items-center gap-3">
           <Link
             to="/production/casting/new"
-            className="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow flex items-center gap-1.5 transition-colors"
+            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 text-xs font-bold shadow-md flex items-center gap-1.5 transition-all"
           >
             <PlusCircle className="w-4 h-4" />
             <span>Post Casting Call</span>
@@ -150,7 +150,7 @@ export const ProductionDashboardPage: React.FC = () => {
 
           <button
             onClick={() => setIsNewProjectOpen(true)}
-            className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold transition-colors border border-white/15"
+            className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold transition-colors border border-amber-500/30 hover:border-amber-400/50"
           >
             + New Film Project
           </button>
@@ -158,13 +158,13 @@ export const ProductionDashboardPage: React.FC = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-2 border-b border-white/10 pb-2 overflow-x-auto text-xs font-semibold">
+      <div className="flex items-center gap-2 border-b border-amber-500/20 pb-2 overflow-x-auto text-xs font-semibold">
         <button
           onClick={() => setActiveTab('pipeline')}
-          className={`px-4 py-2 rounded-xl transition-colors flex items-center gap-2 ${
+          className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 ${
             activeTab === 'pipeline'
-              ? 'bg-amber-600 text-white shadow'
-              : 'text-zinc-400 hover:text-white hover:bg-white/5'
+              ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-md'
+              : 'text-zinc-400 hover:text-amber-200 hover:bg-white/5'
           }`}
         >
           <Users className="w-4 h-4" />
@@ -172,10 +172,10 @@ export const ProductionDashboardPage: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveTab('projects')}
-          className={`px-4 py-2 rounded-xl transition-colors flex items-center gap-2 ${
+          className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 ${
             activeTab === 'projects'
-              ? 'bg-amber-600 text-white shadow'
-              : 'text-zinc-400 hover:text-white hover:bg-white/5'
+              ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-md'
+              : 'text-zinc-400 hover:text-amber-200 hover:bg-white/5'
           }`}
         >
           <Film className="w-4 h-4" />
@@ -183,10 +183,10 @@ export const ProductionDashboardPage: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveTab('shortlists')}
-          className={`px-4 py-2 rounded-xl transition-colors flex items-center gap-2 ${
+          className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 ${
             activeTab === 'shortlists'
-              ? 'bg-amber-600 text-white shadow'
-              : 'text-zinc-400 hover:text-white hover:bg-white/5'
+              ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-md'
+              : 'text-zinc-400 hover:text-amber-200 hover:bg-white/5'
           }`}
         >
           <Bookmark className="w-4 h-4" />
@@ -194,10 +194,10 @@ export const ProductionDashboardPage: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveTab('auditions')}
-          className={`px-4 py-2 rounded-xl transition-colors flex items-center gap-2 ${
+          className={`px-4 py-2 rounded-xl transition-all flex items-center gap-2 ${
             activeTab === 'auditions'
-              ? 'bg-amber-600 text-white shadow'
-              : 'text-zinc-400 hover:text-white hover:bg-white/5'
+              ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-md'
+              : 'text-zinc-400 hover:text-amber-200 hover:bg-white/5'
           }`}
         >
           <Calendar className="w-4 h-4" />
@@ -224,11 +224,11 @@ export const ProductionDashboardPage: React.FC = () => {
             return (
               <div
                 key={proj.id}
-                className="rounded-2xl bg-[#13151f] border border-white/10 p-6 space-y-4 shadow-lg flex flex-col justify-between"
+                className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 p-6 space-y-4 shadow-lg flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-300">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">
                       {proj.project_type}
                     </span>
                     <span className="text-[10px] text-zinc-400 capitalize">
@@ -237,7 +237,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   </div>
 
                   <h3 className="text-xl font-bold text-white font-cinematic">{proj.name}</h3>
-                  <p className="text-xs text-rose-300 font-medium">Directed by {proj.director_name}</p>
+                  <p className="text-xs text-amber-400 font-medium">Directed by {proj.director_name}</p>
                   <p className="text-xs text-zinc-400 line-clamp-2">{proj.description}</p>
                 </div>
 
@@ -248,7 +248,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   </div>
                   <div className="flex justify-between text-zinc-400">
                     <span>Casting Calls:</span>
-                    <span className="text-rose-400 font-semibold">{calls.length} Active</span>
+                    <span className="text-amber-400 font-semibold">{calls.length} Active</span>
                   </div>
                 </div>
               </div>
@@ -261,13 +261,13 @@ export const ProductionDashboardPage: React.FC = () => {
       {activeTab === 'shortlists' && (
         <div className="space-y-6">
           {shortlists.map(shortlist => (
-            <div key={shortlist.id} className="rounded-2xl bg-[#13151f] border border-white/10 p-6 space-y-4">
-              <div className="flex items-center justify-between border-b border-white/5 pb-3">
+            <div key={shortlist.id} className="rounded-2xl bg-[#0d0e14] border border-amber-500/20 p-6 space-y-4 shadow-lg">
+              <div className="flex items-center justify-between border-b border-amber-500/15 pb-3">
                 <div>
                   <h3 className="text-lg font-bold text-white font-cinematic">{shortlist.name}</h3>
                   <p className="text-xs text-zinc-400">{shortlist.description || 'Curated candidate pool'}</p>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold">
+                <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">
                   {shortlist.talent_ids.length} Actors Shortlisted
                 </span>
               </div>
@@ -280,13 +280,13 @@ export const ProductionDashboardPage: React.FC = () => {
                   return (
                     <div
                       key={talentId}
-                      className="p-3 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between gap-3 text-xs"
+                      className="p-3 rounded-xl bg-black/50 border border-amber-500/15 flex items-center justify-between gap-3 text-xs"
                     >
                       <div className="flex items-center gap-2.5">
                         <img
                           src={tal.user?.avatar_url}
                           alt={tal.user?.full_name}
-                          className="w-10 h-10 rounded-full object-cover"
+                          className="w-10 h-10 rounded-full object-cover ring-1 ring-amber-500/20"
                         />
                         <div>
                           <h4 className="font-bold text-white">{tal.stage_name || tal.user?.full_name}</h4>
@@ -295,7 +295,7 @@ export const ProductionDashboardPage: React.FC = () => {
                       </div>
                       <Link
                         to={`/talent/${tal.id}`}
-                        className="text-xs text-rose-400 hover:text-rose-300 font-semibold"
+                        className="text-xs text-amber-400 hover:text-amber-300 font-semibold"
                       >
                         Profile →
                       </Link>
@@ -317,7 +317,7 @@ export const ProductionDashboardPage: React.FC = () => {
               const role = castingRoles.find(r => r.id === aud.casting_role_id);
 
               return (
-                <div key={aud.id} className="p-5 rounded-2xl bg-[#141620] border border-white/10 space-y-3 text-xs">
+                <div key={aud.id} className="p-5 rounded-2xl bg-[#0d0e14] border border-amber-500/20 space-y-3 text-xs shadow-lg">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">
                       {aud.audition_type.toUpperCase()} SCREEN TEST
@@ -329,15 +329,15 @@ export const ProductionDashboardPage: React.FC = () => {
                     <img
                       src={tal?.user?.avatar_url}
                       alt={tal?.user?.full_name}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className="w-12 h-12 rounded-full object-cover ring-1 ring-amber-500/20"
                     />
                     <div>
                       <h4 className="font-bold text-white text-sm">{tal?.stage_name || tal?.user?.full_name}</h4>
-                      <p className="text-xs text-rose-300 font-medium">Role: {role?.role_name}</p>
+                      <p className="text-xs text-amber-400 font-medium">Role: {role?.role_name}</p>
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-black/40 border border-white/5 space-y-1 text-[11px] text-zinc-300">
+                  <div className="p-3 rounded-xl bg-black/60 border border-amber-500/10 space-y-1 text-[11px] text-zinc-300">
                     <div className="flex items-center gap-1.5 font-semibold text-white">
                       <Calendar className="w-3.5 h-3.5 text-amber-400" />
                       <span>{aud.date} at {aud.time}</span>
@@ -347,7 +347,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   </div>
 
                   {aud.talent_self_tape_url && (
-                    <div className="p-2.5 rounded bg-emerald-950/20 border border-emerald-500/20 text-emerald-300">
+                    <div className="p-2.5 rounded-lg bg-emerald-950/20 border border-emerald-500/20 text-emerald-300">
                       <strong>Submitted Self Tape:</strong>{' '}
                       <a href={aud.talent_self_tape_url} target="_blank" rel="noreferrer" className="underline">
                         View Audition Reel ↗
@@ -361,103 +361,18 @@ export const ProductionDashboardPage: React.FC = () => {
         </div>
       )}
 
-      {/* New Project Modal */}
-      {isNewProjectOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="w-full max-w-lg rounded-2xl bg-[#14161f] border border-white/15 p-6 space-y-4 text-white">
-            <h3 className="text-lg font-bold font-cinematic">Create New Production Project</h3>
-            <form onSubmit={handleCreateNewProject} className="space-y-3 text-xs">
-              <div>
-                <label className="block font-semibold text-zinc-300 mb-1">Film / Series Title *</label>
-                <input
-                  required
-                  type="text"
-                  value={newProjectName}
-                  onChange={e => setNewProjectName(e.target.value)}
-                  placeholder="e.g. Manjummel Boys, Premalu 2"
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block font-semibold text-zinc-300 mb-1">Project Type</label>
-                  <select
-                    value={newProjectType}
-                    onChange={e => setNewProjectType(e.target.value as any)}
-                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
-                  >
-                    <option value="film">Feature Film</option>
-                    <option value="ott_series">OTT Original Series</option>
-                    <option value="ad_commercial">Ad Commercial</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block font-semibold text-zinc-300 mb-1">Director Name</label>
-                  <input
-                    type="text"
-                    value={newProjectDirector}
-                    onChange={e => setNewProjectDirector(e.target.value)}
-                    placeholder="Director Name"
-                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block font-semibold text-zinc-300 mb-1">Primary Shoot Locations in Kerala</label>
-                <input
-                  type="text"
-                  value={newProjectLocation}
-                  onChange={e => setNewProjectLocation(e.target.value)}
-                  placeholder="e.g. Fort Kochi, Vagamon, Kozhikode"
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
-                />
-              </div>
-
-              <div>
-                <label className="block font-semibold text-zinc-300 mb-1">Synopsis / Project Pitch</label>
-                <textarea
-                  rows={3}
-                  value={newProjectDescription}
-                  onChange={e => setNewProjectDescription(e.target.value)}
-                  placeholder="Brief synopsis for internal casting coordination..."
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
-                />
-              </div>
-
-              <div className="flex justify-end gap-2 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setIsNewProjectOpen(false)}
-                  className="px-4 py-2 rounded-lg text-zinc-400 hover:text-white"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-5 py-2 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-semibold shadow"
-                >
-                  Create Project
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
       {/* Audition Scheduling Modal */}
       {isAuditionModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="w-full max-w-lg rounded-2xl bg-[#14161f] border border-white/15 p-6 space-y-4 text-white">
-            <h3 className="text-lg font-bold font-cinematic">Schedule Audition / Screen Test</h3>
+          <div className="w-full max-w-lg rounded-2xl bg-[#0d0e14] border border-amber-500/30 p-6 space-y-4 text-white shadow-2xl">
+            <h3 className="text-lg font-bold font-cinematic text-amber-400">Schedule Audition / Screen Test</h3>
             <form onSubmit={handleScheduleAudition} className="space-y-3 text-xs">
               <div>
                 <label className="block font-semibold text-zinc-300 mb-1">Select Character Role</label>
                 <select
                   value={auditionRoleId}
                   onChange={e => setAuditionRoleId(e.target.value)}
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                  className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                 >
                   {castingRoles.map(r => (
                     <option key={r.id} value={r.id}>{r.role_name}</option>
@@ -472,7 +387,7 @@ export const ProductionDashboardPage: React.FC = () => {
                     type="date"
                     value={auditionDate}
                     onChange={e => setAuditionDate(e.target.value)}
-                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                    className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                   />
                 </div>
                 <div>
@@ -482,7 +397,7 @@ export const ProductionDashboardPage: React.FC = () => {
                     value={auditionTime}
                     onChange={e => setAuditionTime(e.target.value)}
                     placeholder="e.g. 10:30 AM"
-                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                    className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                   />
                 </div>
               </div>
@@ -494,7 +409,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   value={auditionLocation}
                   onChange={e => setAuditionLocation(e.target.value)}
                   placeholder="Studio address or Google Meet URL"
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                  className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                 />
               </div>
 
@@ -505,7 +420,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   value={auditionInstructions}
                   onChange={e => setAuditionInstructions(e.target.value)}
                   placeholder="Scenes to prepare, costume reference, dialect instructions..."
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                  className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                 />
               </div>
 
@@ -519,7 +434,7 @@ export const ProductionDashboardPage: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold shadow"
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold shadow-md"
                 >
                   Dispatch Invitation
                 </button>
@@ -532,8 +447,8 @@ export const ProductionDashboardPage: React.FC = () => {
       {/* New Project Modal */}
       {isNewProjectOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="w-full max-w-lg rounded-2xl bg-[#14161f] border border-white/15 p-6 space-y-4 text-white">
-            <h3 className="text-lg font-bold font-cinematic">Add New Project / Production</h3>
+          <div className="w-full max-w-lg rounded-2xl bg-[#0d0e14] border border-amber-500/30 p-6 space-y-4 text-white shadow-2xl">
+            <h3 className="text-lg font-bold font-cinematic text-amber-400">Add New Project / Production</h3>
             <form onSubmit={handleCreateNewProject} className="space-y-3 text-xs">
               <div>
                 <label className="block font-semibold text-zinc-300 mb-1">Project Title *</label>
@@ -543,7 +458,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   value={newProjectName}
                   onChange={e => setNewProjectName(e.target.value)}
                   placeholder="e.g. Manjummel Boys 2 / Lucifer Chapter 2"
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                  className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                 />
               </div>
 
@@ -553,7 +468,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   <select
                     value={newProjectType}
                     onChange={e => setNewProjectType(e.target.value as ProjectType)}
-                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                    className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                   >
                     <option value="feature_film">Feature Film</option>
                     <option value="web_series">Web / OTT Series</option>
@@ -570,7 +485,7 @@ export const ProductionDashboardPage: React.FC = () => {
                     value={newProjectDirector}
                     onChange={e => setNewProjectDirector(e.target.value)}
                     placeholder="e.g. Lijo Jose Pellissery"
-                    className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                    className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                   />
                 </div>
               </div>
@@ -582,7 +497,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   value={newProjectLocation}
                   onChange={e => setNewProjectLocation(e.target.value)}
                   placeholder="e.g. Fort Kochi, Vagamon, Munnar"
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                  className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                 />
               </div>
 
@@ -593,7 +508,7 @@ export const ProductionDashboardPage: React.FC = () => {
                   value={newProjectDescription}
                   onChange={e => setNewProjectDescription(e.target.value)}
                   placeholder="Synopsis or story pitch for casting associates..."
-                  className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white"
+                  className="w-full bg-black/60 border border-amber-500/30 rounded-lg px-3 py-2 text-xs text-white"
                 />
               </div>
 
@@ -607,7 +522,7 @@ export const ProductionDashboardPage: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-semibold shadow"
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold shadow-md"
                 >
                   Create Project
                 </button>

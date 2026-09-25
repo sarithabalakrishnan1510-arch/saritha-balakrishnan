@@ -183,7 +183,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
     <div className="max-w-4xl mx-auto px-4 py-12 space-y-8">
       {/* Header Banner */}
       <div className="text-center space-y-3">
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-300 text-xs font-semibold">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Kerala Film Chamber & FEFKA Authorized Network</span>
         </div>
@@ -197,21 +197,21 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
 
       {/* Active Session Notification (if logged in) */}
       {currentUser && (
-        <div className="p-4 rounded-2xl bg-gradient-to-r from-[#141724] to-[#1a121c] border border-white/10 shadow-lg flex flex-wrap items-center justify-between gap-4">
+        <div className="p-4 rounded-2xl bg-gradient-to-r from-[#141724] to-[#1a1712] border border-amber-500/20 shadow-lg flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img
               src={currentUser.avatar_url || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&fit=crop'}
               alt={currentUser.full_name}
-              className="w-12 h-12 rounded-full object-cover ring-2 ring-rose-500/40"
+              className="w-12 h-12 rounded-full object-cover ring-2 ring-amber-500/50"
             />
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-sm font-bold text-white">{currentUser.full_name}</span>
                 <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
                   currentUser.role === 'talent'
-                    ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
-                    : currentUser.role === 'production'
                     ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                    : currentUser.role === 'production'
+                    ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30'
                     : 'bg-purple-500/20 text-purple-300 border border-purple-500/30'
                 }`}>
                   {currentUser.role}
@@ -235,7 +235,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                   ? '/production/dashboard'
                   : '/admin'
               }
-              className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow transition-colors"
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold text-xs flex items-center gap-1.5 shadow transition-transform hover:scale-[1.02]"
             >
               <span>Go to Dashboard</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -271,12 +271,12 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
       )}
 
       {/* Main Tabs Navigation */}
-      <div className="flex items-center justify-center gap-2 p-1.5 rounded-2xl bg-[#11131c] border border-white/10 max-w-xl mx-auto">
+      <div className="flex items-center justify-center gap-2 p-1.5 rounded-2xl bg-[#0d0e14] border border-amber-500/20 max-w-xl mx-auto">
         <button
           onClick={() => setActiveTab('login')}
           className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
             activeTab === 'login'
-              ? 'bg-rose-600 text-white shadow-md'
+              ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-md'
               : 'text-zinc-400 hover:text-white hover:bg-white/5'
           }`}
         >
@@ -288,7 +288,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
           onClick={() => setActiveTab('signup')}
           className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
             activeTab === 'signup'
-              ? 'bg-rose-600 text-white shadow-md'
+              ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-md'
               : 'text-zinc-400 hover:text-white hover:bg-white/5'
           }`}
         >
@@ -300,7 +300,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
           onClick={() => setActiveTab('directory')}
           className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
             activeTab === 'directory'
-              ? 'bg-rose-600 text-white shadow-md'
+              ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-zinc-950 font-bold shadow-md'
               : 'text-zinc-400 hover:text-white hover:bg-white/5'
           }`}
         >
@@ -315,13 +315,13 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
           {/* Preset Demo Switcher */}
           <div className="space-y-2">
             <span className="text-xs font-medium text-zinc-400">Quick 1-Click Persona Pre-fill:</span>
-            <div className="grid grid-cols-3 gap-1.5 p-1 rounded-2xl bg-[#11131c] border border-white/10 text-xs">
+            <div className="grid grid-cols-3 gap-1.5 p-1 rounded-2xl bg-[#0d0e14] border border-amber-500/20 text-xs">
               <button
                 type="button"
                 onClick={() => handleSelectPresetRole('talent')}
                 className={`py-2 px-1 rounded-xl font-semibold flex flex-col items-center gap-1 transition-all ${
                   loginRole === 'talent'
-                    ? 'bg-rose-600 text-white shadow'
+                    ? 'bg-amber-500 text-zinc-950 font-bold shadow'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -334,7 +334,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                 onClick={() => handleSelectPresetRole('production')}
                 className={`py-2 px-1 rounded-xl font-semibold flex flex-col items-center gap-1 transition-all ${
                   loginRole === 'production'
-                    ? 'bg-amber-600 text-white shadow'
+                    ? 'bg-amber-500 text-zinc-950 font-bold shadow'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -347,7 +347,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                 onClick={() => handleSelectPresetRole('admin')}
                 className={`py-2 px-1 rounded-xl font-semibold flex flex-col items-center gap-1 transition-all ${
                   loginRole === 'admin'
-                    ? 'bg-purple-600 text-white shadow'
+                    ? 'bg-amber-500 text-zinc-950 font-bold shadow'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -358,7 +358,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
           </div>
 
           {/* Form */}
-          <div className="p-6 rounded-2xl bg-[#131520] border border-white/10 space-y-4 shadow-xl">
+          <div className="p-6 rounded-2xl bg-[#0d0e14] border border-amber-500/20 space-y-4 shadow-xl">
             <form onSubmit={handleLoginSubmit} className="space-y-4 text-xs">
               <div>
                 <label className="block font-semibold text-zinc-300 mb-1 flex items-center justify-between">
@@ -373,7 +373,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     value={loginEmail}
                     onChange={e => setLoginEmail(e.target.value)}
                     placeholder="name@castkerala.com"
-                    className="w-full pl-9 pr-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                    className="w-full pl-9 pr-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
@@ -390,25 +390,25 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     required
                     value={loginPassword}
                     onChange={e => setLoginPassword(e.target.value)}
-                    className="w-full pl-9 pr-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                    className="w-full pl-9 pr-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs transition-colors shadow-lg flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs transition-colors shadow-lg flex items-center justify-center gap-2"
               >
                 <span>Sign In as {loginRole.toUpperCase()}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
 
-            <div className="pt-2 text-center border-t border-white/5">
+            <div className="pt-2 text-center border-t border-amber-500/10">
               <button
                 type="button"
                 onClick={() => setActiveTab('directory')}
-                className="text-[11px] text-rose-400 hover:text-rose-300 transition-colors inline-flex items-center gap-1 font-medium"
+                className="text-[11px] text-amber-400 hover:text-amber-300 transition-colors inline-flex items-center gap-1 font-medium"
               >
                 <span>Browse all 13+ actors & production houses in directory</span>
                 <ArrowRight className="w-3 h-3" />
@@ -421,7 +421,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
       {/* TAB 2: REGISTER / SIGN UP */}
       {activeTab === 'signup' && (
         <div className="max-w-xl mx-auto space-y-6 animate-in fade-in duration-150">
-          <div className="p-6 rounded-2xl bg-[#131520] border border-white/10 space-y-5 shadow-xl">
+          <div className="p-6 rounded-2xl bg-[#0d0e14] border border-amber-500/20 space-y-5 shadow-xl">
             <div>
               <h2 className="text-base font-bold text-white">Create New Mollywood Account</h2>
               <p className="text-xs text-zinc-400 mt-0.5">
@@ -449,11 +449,11 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     }}
                     className={`p-3 rounded-xl border text-left flex items-start gap-2.5 transition-all ${
                       regRole === 'talent'
-                        ? 'bg-rose-600/15 border-rose-500 text-white ring-1 ring-rose-500/30'
+                        ? 'bg-amber-500/15 border-amber-500 text-white ring-1 ring-amber-500/30'
                         : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'
                     }`}
                   >
-                    <User className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />
+                    <User className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                     <div>
                       <span className="block font-bold text-xs">Actor / Talent</span>
                       <span className="text-[10px] text-zinc-400">Performers, dancers, voice artists, child artists</span>
@@ -468,7 +468,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     }}
                     className={`p-3 rounded-xl border text-left flex items-start gap-2.5 transition-all ${
                       regRole === 'production'
-                        ? 'bg-amber-600/15 border-amber-500 text-white ring-1 ring-amber-500/30'
+                        ? 'bg-amber-500/15 border-amber-500 text-white ring-1 ring-amber-500/30'
                         : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'
                     }`}
                   >
@@ -491,7 +491,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     value={regFullName}
                     onChange={e => setRegFullName(e.target.value)}
                     placeholder="e.g. Anandha Krishnan"
-                    className="w-full px-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
@@ -504,7 +504,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     value={regStageOrCompany}
                     onChange={e => setRegStageOrCompany(e.target.value)}
                     placeholder={regRole === 'talent' ? 'Screen name' : 'e.g. Malabar Motion Pictures'}
-                    className="w-full px-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
@@ -518,7 +518,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     value={regEmail}
                     onChange={e => setRegEmail(e.target.value)}
                     placeholder="you@mollywood.com"
-                    className="w-full px-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
@@ -529,7 +529,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     value={regPhone}
                     onChange={e => setRegPhone(e.target.value)}
                     placeholder="+91 94470 12345"
-                    className="w-full px-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
@@ -541,7 +541,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                   <select
                     value={regDistrict}
                     onChange={e => setRegDistrict(e.target.value as KeralaDistrict)}
-                    className="w-full px-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                   >
                     {KERALA_DISTRICTS.map(dist => (
                       <option key={dist} value={dist} className="bg-[#111218] text-white">
@@ -558,7 +558,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                     value={regCity}
                     onChange={e => setRegCity(e.target.value)}
                     placeholder="e.g. Fort Kochi, Panampilly Nagar"
-                    className="w-full px-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                    className="w-full px-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
@@ -571,7 +571,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                   value={regCategory}
                   onChange={e => setRegCategory(e.target.value)}
                   placeholder="e.g. Character Artist, Classical Dancer, Line Producer"
-                  className="w-full px-3 py-2.5 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                  className="w-full px-3 py-2.5 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
@@ -582,18 +582,18 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                   value={regBio}
                   onChange={e => setRegBio(e.target.value)}
                   placeholder="Tell casting directors about your past theatre, short film, or feature film projects..."
-                  className="w-full px-3 py-2 bg-black/60 border border-white/15 rounded-xl text-xs text-white focus:outline-none focus:border-rose-500"
+                  className="w-full px-3 py-2 bg-black/60 border border-amber-500/25 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
                 />
               </div>
 
               {/* Safety Compliance Check */}
-              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-amber-500/20">
                 <input
                   type="checkbox"
                   id="agree-guidelines"
                   checked={regAgreeGuidelines}
                   onChange={e => setRegAgreeGuidelines(e.target.checked)}
-                  className="mt-0.5 rounded border-white/20 text-rose-600 focus:ring-rose-500"
+                  className="mt-0.5 rounded border-amber-500/30 text-amber-500 focus:ring-amber-400 bg-zinc-900"
                 />
                 <label htmlFor="agree-guidelines" className="text-[11px] text-zinc-300 leading-tight">
                   I agree to abide by the Kerala Film Chamber and FEFKA safety guidelines, including strict anti-fraud rules and ethical audition protocols.
@@ -602,7 +602,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs transition-colors shadow-lg flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs transition-colors shadow-lg flex items-center justify-center gap-2"
               >
                 <span>Create Account & Sign In</span>
                 <ArrowRight className="w-4 h-4" />
@@ -616,7 +616,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
       {activeTab === 'directory' && (
         <div className="space-y-4 animate-in fade-in duration-150">
           {/* Filter and search bar */}
-          <div className="p-4 rounded-2xl bg-[#131520] border border-white/10 flex flex-wrap items-center justify-between gap-3">
+          <div className="p-4 rounded-2xl bg-[#0d0e14] border border-amber-500/20 flex flex-wrap items-center justify-between gap-3">
             <div className="relative flex-1 min-w-[240px]">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
               <input
@@ -624,7 +624,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                 value={directorySearch}
                 onChange={e => setDirectorySearch(e.target.value)}
                 placeholder="Search by actor name, director, studio, district, or email..."
-                className="w-full pl-9 pr-3 py-2 bg-black/50 border border-white/15 rounded-xl text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500"
+                className="w-full pl-9 pr-3 py-2 bg-black/50 border border-amber-500/20 rounded-xl text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400"
               />
             </div>
 
@@ -634,7 +634,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                 onClick={() => setDirectoryFilter('all')}
                 className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
                   directoryFilter === 'all'
-                    ? 'bg-white text-black font-bold'
+                    ? 'bg-amber-400 text-zinc-950 font-bold'
                     : 'bg-white/5 text-zinc-400 hover:text-white'
                 }`}
               >
@@ -645,7 +645,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                 onClick={() => setDirectoryFilter('talent')}
                 className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
                   directoryFilter === 'talent'
-                    ? 'bg-rose-600 text-white font-bold'
+                    ? 'bg-amber-500 text-zinc-950 font-bold'
                     : 'bg-white/5 text-zinc-400 hover:text-white'
                 }`}
               >
@@ -656,7 +656,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                 onClick={() => setDirectoryFilter('production')}
                 className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
                   directoryFilter === 'production'
-                    ? 'bg-amber-600 text-white font-bold'
+                    ? 'bg-yellow-500 text-zinc-950 font-bold'
                     : 'bg-white/5 text-zinc-400 hover:text-white'
                 }`}
               >
@@ -685,8 +685,8 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                   key={user.id}
                   className={`p-4 rounded-2xl border transition-all flex flex-col justify-between gap-3 ${
                     isCurrent
-                      ? 'bg-rose-500/10 border-rose-500/40 ring-1 ring-rose-500/25'
-                      : 'bg-[#141722] hover:bg-[#181b28] border-white/10'
+                      ? 'bg-amber-500/10 border-amber-500/40 ring-1 ring-amber-500/25'
+                      : 'bg-[#0d0e14] hover:bg-[#12141c] border-amber-500/15'
                   }`}
                 >
                   <div className="flex items-start gap-3.5">
@@ -698,9 +698,9 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                       />
                       <span className={`absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full border-2 border-[#141722] ${
                         user.role === 'talent'
-                          ? 'bg-rose-500'
+                          ? 'bg-amber-400'
                           : user.role === 'production'
-                          ? 'bg-amber-500'
+                          ? 'bg-yellow-400'
                           : 'bg-purple-500'
                       }`} />
                     </div>
@@ -713,9 +713,9 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                         )}
                         <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
                           user.role === 'talent'
-                            ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
-                            : user.role === 'production'
                             ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                            : user.role === 'production'
+                            ? 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30'
                             : 'bg-purple-500/20 text-purple-300 border border-purple-500/30'
                         }`}>
                           {user.role}
@@ -728,7 +728,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
 
                       <div className="flex items-center gap-2 text-[11px] text-zinc-500 mt-1.5 flex-wrap">
                         <span className="flex items-center gap-1">
-                          <MapPin className="w-3 h-3 text-zinc-400" />
+                          <MapPin className="w-3 h-3 text-amber-400" />
                           <span>{user.district}</span>
                         </span>
                         <span>•</span>
@@ -752,7 +752,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ initialMode = 'login' }) => 
                       className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all ${
                         isCurrent
                           ? 'bg-white/10 text-zinc-300 hover:bg-white/20'
-                          : 'bg-rose-600 hover:bg-rose-500 text-white shadow-md'
+                          : 'bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold shadow-md'
                       }`}
                     >
                       <span>{isCurrent ? 'Continue' : 'Log In as User'}</span>

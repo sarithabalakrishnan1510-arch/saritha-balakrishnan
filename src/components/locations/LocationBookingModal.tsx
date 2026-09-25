@@ -151,7 +151,7 @@ export const LocationBookingModal: React.FC<LocationBookingModalProps> = ({
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 bg-[#161825] border-b border-white/10 shrink-0">
           <div className="flex items-center gap-2.5 min-w-0 pr-2">
-            <span className="p-2 rounded-xl bg-gradient-to-br from-rose-500/20 to-amber-500/20 text-rose-400 border border-rose-500/30 shrink-0">
+            <span className="p-2 rounded-xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 text-amber-400 border border-amber-500/30 shrink-0">
               <Calendar className="w-5 h-5" />
             </span>
             <div className="min-w-0">
@@ -267,7 +267,7 @@ export const LocationBookingModal: React.FC<LocationBookingModalProps> = ({
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3 rounded-2xl bg-black/40 border border-white/10 text-xs">
               <div className="space-y-0.5">
                 <span className="text-[10px] text-zinc-400 block">Tariff Rate</span>
-                <span className="font-bold text-rose-300">{location.pricing_text || '₹40,000 / Day'}</span>
+                <span className="font-bold text-amber-300">{location.pricing_text || '₹40,000 / Day'}</span>
               </div>
               <div className="space-y-0.5">
                 <span className="text-[10px] text-zinc-400 block">Max Crew</span>
@@ -519,7 +519,7 @@ export const LocationBookingModal: React.FC<LocationBookingModalProps> = ({
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
+                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-zinc-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-amber-950/40"
                 >
                   Submit Inquiry
                 </button>

@@ -101,9 +101,9 @@ export const TalentRegistryPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-500/20 pb-6">
         <div>
-          <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider block mb-1">
+          <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-1">
             Mollywood Casting Directory
           </span>
           <h1 className="text-3xl font-extrabold text-white font-cinematic tracking-tight">
@@ -115,7 +115,7 @@ export const TalentRegistryPage: React.FC = () => {
         </div>
 
         {currentUser?.role === 'production' && activeShortlist && (
-          <div className="p-3 rounded-xl bg-amber-950/30 border border-amber-500/20 text-xs text-amber-300 flex items-center gap-2">
+          <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-300 flex items-center gap-2 shadow-sm">
             <Bookmark className="w-4 h-4 text-amber-400" />
             <span>Active Shortlist: <strong>{activeShortlist.name}</strong> ({activeShortlist.talent_ids.length} talents)</span>
           </div>
@@ -123,17 +123,17 @@ export const TalentRegistryPage: React.FC = () => {
       </div>
 
       {/* Filter Toolbar */}
-      <div className="p-5 rounded-2xl bg-[#111319] border border-white/10 space-y-4">
+      <div className="p-5 rounded-2xl bg-[#0c0d12] border border-amber-500/20 space-y-4 shadow-xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {/* Keyword search */}
           <div className="relative">
-            <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-3" />
+            <Search className="w-4 h-4 text-amber-400/70 absolute left-3 top-3" />
             <input
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search stage name, skills, dialect..."
-              className="w-full bg-black/50 border border-white/10 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-rose-500"
+              className="w-full bg-black/60 border border-amber-500/25 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-400/70"
             />
           </div>
 
@@ -142,7 +142,7 @@ export const TalentRegistryPage: React.FC = () => {
             <select
               value={districtFilter}
               onChange={e => setDistrictFilter(e.target.value)}
-              className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+              className="w-full bg-black/60 border border-amber-500/25 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400/70"
             >
               <option value="all">All Districts (Kerala)</option>
               {KERALA_DISTRICTS.map(d => (
@@ -156,7 +156,7 @@ export const TalentRegistryPage: React.FC = () => {
             <select
               value={categoryFilter}
               onChange={e => setCategoryFilter(e.target.value)}
-              className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+              className="w-full bg-black/60 border border-amber-500/25 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400/70"
             >
               <option value="all">All Categories</option>
               {TALENT_CATEGORIES.map(c => (
@@ -170,7 +170,7 @@ export const TalentRegistryPage: React.FC = () => {
             <select
               value={genderFilter}
               onChange={e => setGenderFilter(e.target.value)}
-              className="w-full bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+              className="w-full bg-black/60 border border-amber-500/25 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400/70"
             >
               <option value="all">Gender: Any</option>
               <option value="male">Male</option>
@@ -181,14 +181,14 @@ export const TalentRegistryPage: React.FC = () => {
         </div>
 
         {/* Second row toggles & range */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-white/5 text-xs text-zinc-300">
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-amber-500/15 text-xs text-zinc-300">
           <div className="flex flex-wrap items-center gap-4">
             <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
                 checked={verifiedOnly}
                 onChange={e => setVerifiedOnly(e.target.checked)}
-                className="rounded border-white/20 bg-zinc-800 text-rose-600 focus:ring-0"
+                className="rounded border-amber-500/30 bg-zinc-800 text-amber-500 focus:ring-0"
               />
               <span className="flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
@@ -201,9 +201,9 @@ export const TalentRegistryPage: React.FC = () => {
                 type="checkbox"
                 checked={childArtistsOnly}
                 onChange={e => setChildArtistsOnly(e.target.checked)}
-                className="rounded border-white/20 bg-zinc-800 text-amber-600 focus:ring-0"
+                className="rounded border-amber-500/30 bg-zinc-800 text-amber-500 focus:ring-0"
               />
-              <span className="flex items-center gap-1 text-amber-300">
+              <span className="flex items-center gap-1 text-amber-300 font-semibold">
                 <UserCheck className="w-3.5 h-3.5" />
                 Child Artists (Minor Protection)
               </span>
@@ -214,7 +214,7 @@ export const TalentRegistryPage: React.FC = () => {
             <span className="text-[11px] text-zinc-400">Playing Age: {selectedAgeMin}–{selectedAgeMax} yrs</span>
             <button
               onClick={handleResetFilters}
-              className="text-xs text-zinc-400 hover:text-white flex items-center gap-1 p-1 hover:bg-white/5 rounded"
+              className="text-xs text-zinc-400 hover:text-amber-300 flex items-center gap-1 p-1 hover:bg-white/5 rounded transition-colors"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>Reset</span>
@@ -227,19 +227,19 @@ export const TalentRegistryPage: React.FC = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between text-xs text-zinc-400">
           <span>Displaying {filteredTalents.length} verified actors</span>
-          <span>Contact info masked for privacy</span>
+          <span className="text-amber-400/90 font-medium">Contact info masked for privacy</span>
         </div>
 
         {filteredTalents.length === 0 ? (
-          <div className="text-center py-16 p-8 rounded-2xl bg-black/30 border border-white/5 space-y-3">
-            <Users className="w-12 h-12 text-zinc-600 mx-auto" />
+          <div className="text-center py-16 p-8 rounded-2xl bg-[#0c0d12] border border-amber-500/20 space-y-3">
+            <Users className="w-12 h-12 text-amber-500/30 mx-auto" />
             <h3 className="text-lg font-bold text-white">No talent profiles match your filter criteria</h3>
             <p className="text-xs text-zinc-400 max-w-sm mx-auto">
               Try adjusting the playing age range, district, or category to see more profiles.
             </p>
             <button
               onClick={handleResetFilters}
-              className="px-4 py-2 rounded-lg bg-rose-600 text-white text-xs font-semibold"
+              className="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 text-xs font-bold shadow-md"
             >
               Reset Filters
             </button>

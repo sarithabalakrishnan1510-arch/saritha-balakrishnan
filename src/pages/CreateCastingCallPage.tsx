@@ -112,8 +112,8 @@ export const CreateCastingCallPage: React.FC = () => {
         <span>Back</span>
       </button>
 
-      <div className="border-b border-white/10 pb-4">
-        <span className="text-xs font-semibold text-rose-400 uppercase tracking-wider block mb-1">
+      <div className="border-b border-amber-500/20 pb-4">
+        <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider block mb-1">
           Production Desk
         </span>
         <h1 className="text-3xl font-extrabold text-white font-cinematic tracking-tight">
@@ -183,7 +183,7 @@ export const CreateCastingCallPage: React.FC = () => {
                 value={title}
                 onChange={e => setTitle(e.target.value)}
                 placeholder="e.g. Seeking Fresh Female & Male Leads for Upcoming Thriller"
-                className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+                className="w-full bg-black/60 border border-amber-500/25 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
               />
             </div>
 
@@ -195,7 +195,7 @@ export const CreateCastingCallPage: React.FC = () => {
                 value={description}
                 onChange={e => setDescription(e.target.value)}
                 placeholder="Provide details on project mood, storyline, director's vision, and target filming dates..."
-                className="w-full bg-black/60 border border-white/15 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-rose-500"
+                className="w-full bg-black/60 border border-amber-500/25 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
               />
             </div>
 
@@ -232,10 +232,10 @@ export const CreateCastingCallPage: React.FC = () => {
               {roles.map((role, idx) => (
                 <div
                   key={idx}
-                  className="p-5 rounded-2xl bg-[#141620] border border-white/10 space-y-4 text-xs relative"
+                  className="p-5 rounded-2xl bg-[#0d0e14] border border-amber-500/20 space-y-4 text-xs relative shadow-md"
                 >
-                  <div className="flex items-center justify-between border-b border-white/5 pb-2.5">
-                    <span className="font-bold text-rose-400 text-xs">Role #{idx + 1}</span>
+                  <div className="flex items-center justify-between border-b border-amber-500/10 pb-2.5">
+                    <span className="font-bold text-amber-400 text-xs">Role #{idx + 1}</span>
                     {roles.length > 1 && (
                       <button
                         type="button"
@@ -336,7 +336,7 @@ export const CreateCastingCallPage: React.FC = () => {
                         type="checkbox"
                         checked={role.self_tape_required}
                         onChange={e => handleRoleChange(idx, 'self_tape_required', e.target.checked)}
-                        className="rounded border-white/20 bg-zinc-800 text-rose-600"
+                        className="rounded border-amber-500/30 bg-zinc-900 text-amber-500 focus:ring-amber-400"
                       />
                       <span className="text-zinc-300">Self-Tape / Audition Clip Requested</span>
                     </label>
@@ -345,7 +345,7 @@ export const CreateCastingCallPage: React.FC = () => {
                         type="checkbox"
                         checked={role.showreel_required}
                         onChange={e => handleRoleChange(idx, 'showreel_required', e.target.checked)}
-                        className="rounded border-white/20 bg-zinc-800 text-rose-600"
+                        className="rounded border-amber-500/30 bg-zinc-900 text-amber-500 focus:ring-amber-400"
                       />
                       <span className="text-zinc-300">Prior Showreel Required</span>
                     </label>
@@ -355,7 +355,7 @@ export const CreateCastingCallPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex justify-end gap-3 pt-4 border-t border-white/10">
+          <div className="flex justify-end gap-3 pt-4 border-t border-amber-500/20">
             <button
               type="button"
               onClick={() => navigate(-1)}
@@ -365,7 +365,7 @@ export const CreateCastingCallPage: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="px-7 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs shadow-lg transition-all"
+              className="px-7 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-bold text-xs shadow-lg transition-all"
             >
               Publish Casting Notice
             </button>

@@ -9,8 +9,8 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #0b0c0e;
-    color: #e5e7eb;
+    background-color: #07080a;
+    color: #f3f4f6;
   }
 
   h1, h2, .font-cinematic {
@@ -19,50 +19,68 @@
   }
 }
 
-/* Custom scrollbar */
+/* Gold text shine */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.2);
+}
+
+.gold-border-glow {
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+}
+
+/* Custom scrollbar in Black & Gold */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #111216;
+  background: #090a0d;
 }
 ::-webkit-scrollbar-thumb {
-  background: #272a34;
+  background: #2b2515;
   border-radius: 9999px;
+  border: 1px solid rgba(217, 119, 6, 0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f4453;
+  background: #785e19;
 }
 
 /* Leaflet Map Customizations */
 .leaflet-container {
   font-family: var(--font-sans) !important;
-  background-color: #0c0d12 !important;
+  background-color: #07080a !important;
   z-index: 10 !important;
 }
 
 .leaflet-control-zoom {
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
   border-radius: 12px !important;
   overflow: hidden !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.8) !important;
 }
 
 .leaflet-control-zoom a {
-  background-color: #161822 !important;
-  color: #e5e7eb !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: #111319 !important;
+  color: #fbbf24 !important;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2) !important;
   transition: all 0.15s ease !important;
 }
 
 .leaflet-control-zoom a:hover {
-  background-color: #242738 !important;
-  color: #ffffff !important;
+  background-color: #231c0e !important;
+  color: #fef08a !important;
 }
 
 .custom-film-marker {
   background: transparent !important;
   border: none !important;
 }
+
 
